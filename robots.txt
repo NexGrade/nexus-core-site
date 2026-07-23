@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nexuscoretecnologia.com.br/sitemap.xml
