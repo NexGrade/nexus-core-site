@@ -137,17 +137,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--f-display);
-  font-weight: 800;
-  font-size: 1rem;
-  color: white;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
