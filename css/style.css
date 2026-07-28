@@ -414,6 +414,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .section-head p { margin-top: 16px; font-size: 1.05rem; }
 
+/* [NOVO] O ".eyebrow" sozinho é pequeno demais (12.5px, maiúsculo) pra
+   funcionar como título de uma seção inteira -- foi pensado como
+   rótulo pequeno ACIMA de um título grande, não como título em si.
+   Quando uma seção numerada usa só o eyebrow como "título", a página
+   inteira lê como um bloco denso sem hierarquia. Este padrão junta os
+   dois: o eyebrow continua pequeno (numeração/categoria), e um título
+   de verdade abaixo dele dá peso visual e ponto de respiro. */
+.section-block {
+  margin-bottom: 56px;
+}
+.section-block:last-child { margin-bottom: 0; }
+
+.section-block-title {
+  font-size: 1.5rem;
+  margin-top: 4px;
+  margin-bottom: 24px;
+  max-width: 640px;
+}
+
 /* ============================================================
    Cards de iniciativa (home)
    ============================================================ */
