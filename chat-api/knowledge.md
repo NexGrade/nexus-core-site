@@ -31,9 +31,9 @@ automotivo e garantindo integrações que funcionam de verdade na
 ponta.
 Produto · Piloto ativo
 NexGrade
-Geração de horário escolar com integração nativa SEED-PR/RCO —
-construído para resolver exatamente onde os sistemas concorrentes
-falham.
+Geração de horário escolar integrada à SEED-PR, com a integração
+ao RCO em desenvolvimento — construído para resolver exatamente
+onde os sistemas concorrentes falham.
 Conhecer o NexGrade →
 Soluções · Em produção
 Soluções Educacionais
@@ -382,7 +382,7 @@ contato@nexuscoretecnologia.com.br
 Onde estamos
 Piraquara, Paraná — Brasil
 Sobre qual iniciativa você quer falar?
-NexGrade (horário escolar e integração SEED-PR/RCO), Soluções Educacionais (Nex Reserva e Nex Cantina) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
+NexGrade (horário escolar para a rede SEED-PR), Soluções Educacionais (Nex Reserva e Nex Cantina) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
 
 ## Dados de contato
 
