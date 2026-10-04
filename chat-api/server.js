@@ -8,6 +8,8 @@ import { readFileSync } from "node:fs";
 const PORT = process.env.PORT || 10000;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+// Modelo reserva, usado quando o principal está sobrecarregado
+const GEMINI_FALLBACK_MODEL = process.env.GEMINI_FALLBACK_MODEL || "gemini-flash-lite-latest";
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS ||
   "https://nexuscoretecnologia.com.br,https://www.nexuscoretecnologia.com.br")
   .split(",").map((s) => s.trim()).filter(Boolean);
@@ -99,8 +101,30 @@ function cleanMessages(raw) {
   return msgs;
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Tenta o modelo principal (com novas tentativas em 503/429) e depois o reserva.
 async function askGemini(messages) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+  const plano = [
+    [GEMINI_MODEL, 0], [GEMINI_MODEL, 1000], [GEMINI_MODEL, 2500],
+    [GEMINI_FALLBACK_MODEL, 0],
+  ];
+  let ultimoErro;
+  for (const [modelo, espera] of plano) {
+    if (espera) await sleep(espera);
+    try {
+      return await callGemini(modelo, messages);
+    } catch (err) {
+      ultimoErro = err;
+      if (!err.temporario) throw err; // erro de chave, pedido etc.: não adianta repetir
+      console.error(new Date().toISOString(), `${modelo} indisponível (${err.status}), tentando de novo`);
+    }
+  }
+  throw ultimoErro;
+}
+
+async function callGemini(model, messages) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const r = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
@@ -116,7 +140,10 @@ async function askGemini(messages) {
   });
   if (!r.ok) {
     const detail = await r.text();
-    throw new Error(`gemini_${r.status}: ${detail.slice(0, 300)}`);
+    const err = new Error(`gemini_${r.status} (${model}): ${detail.slice(0, 300)}`);
+    err.status = r.status;
+    err.temporario = r.status === 503 || r.status === 429 || r.status === 500;
+    throw err;
   }
   const data = await r.json();
   const text = (data.candidates?.[0]?.content?.parts || [])
