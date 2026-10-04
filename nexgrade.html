@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia</title>
-<meta name="description" content="NexGrade: motor de geração de horário escolar com detecção de conflitos, integração com SEED-PR/RCO e exportação em PDF. Grade pronta em minutos, não semanas.">
+<meta name="description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -14,12 +14,12 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Nexus Core Tecnologia">
 <meta property="og:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta property="og:description" content="NexGrade: motor de geração de horário escolar com detecção de conflitos, integração com SEED-PR/RCO e exportação em PDF. Grade pronta em minutos, não semanas.">
+<meta property="og:description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <meta property="og:url" content="https://nexuscoretecnologia.com.br/nexgrade.html">
 <meta property="og:image" content="https://nexuscoretecnologia.com.br/img/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta name="twitter:description" content="NexGrade: motor de geração de horário escolar com detecção de conflitos, integração com SEED-PR/RCO e exportação em PDF. Grade pronta em minutos, não semanas.">
+<meta name="twitter:description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <meta name="twitter:image" content="https://nexuscoretecnologia.com.br/img/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +27,79 @@
 <style>
   :root { --page-accent: var(--azul-claro); }
   .page-hero { background: linear-gradient(180deg, rgba(21,101,192,0.12), transparent); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Resultados */
+  .result-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 860px) { .result-grid { grid-template-columns: 1fr; } }
+  .result-big { font-family: var(--f-display); font-weight: 800; font-size: clamp(3.4rem, 9vw, 5.6rem); line-height: 1; color: var(--azul-claro); }
+  .result-lead { font-size: 1.08rem; color: var(--texto); max-width: 520px; margin-top: 14px; }
+  .shift-bars { margin-top: 32px; display: grid; gap: 22px; }
+  .shift-row h4 { font-size: 0.95rem; margin-bottom: 8px; }
+  .bar { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; font-size: 0.85rem; color: var(--texto-muted); }
+  .bar-track { flex: 1; height: 12px; background: var(--bg); border-radius: 6px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 6px; }
+  .bar-before .bar-fill { background: var(--texto-tenue); }
+  .bar-after .bar-fill { background: var(--azul-claro); min-width: 4px; }
+  .bar-label { width: 108px; flex-shrink: 0; }
+  .bar-value { width: 34px; text-align: right; font-weight: 600; color: var(--texto); }
+  .case-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+  .case-card h3 { font-size: 1.1rem; margin-bottom: 18px; }
+  .case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .case-stats strong { display: block; font-family: var(--f-display); font-size: 1.7rem; color: var(--azul-claro); line-height: 1.1; }
+  .case-stats span { font-size: 0.85rem; color: var(--texto-muted); }
+  .source-note { font-size: 0.8rem; color: var(--texto-tenue); margin-top: 28px; }
+
+  /* Passos */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: passo; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+  .step { border-top: 3px solid var(--azul-claro); padding-top: 18px; }
+  .step-num { font-family: var(--f-display); font-weight: 800; font-size: 1.6rem; color: var(--azul-claro); }
+  .step h3 { font-size: 1.1rem; margin: 6px 0 8px; }
+  .step p { font-size: 0.93rem; }
+
+  /* Galeria de telas */
+  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
+  @media (max-width: 760px) { .shots { grid-template-columns: 1fr; } }
+  .shots-phone { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px) { .shots-phone { grid-template-columns: 1fr; } }
+  .shot { margin: 0; }
+  .shot button { display: block; width: 100%; padding: 0; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #f5f7fa; cursor: zoom-in; overflow: hidden; }
+  .shot button:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; }
+  .shot img { display: block; width: 100%; height: 260px; object-fit: cover; object-position: top left; }
+  .shots-phone .shot img { height: 420px; object-position: top center; }
+  .shot figcaption { margin-top: 12px; }
+  .shot figcaption strong { display: block; color: var(--texto); font-size: 0.98rem; margin-bottom: 4px; }
+  .shot figcaption span { font-size: 0.88rem; color: var(--texto-muted); }
+  .shots-group-title { font-size: 1.25rem; margin: 0 0 22px; }
+  .shots + .shots-group-title { margin-top: 56px; }
+  .shots-note { font-size: 0.8rem; color: var(--texto-tenue); margin-top: 28px; }
+  dialog.lightbox { border: none; padding: 0; background: transparent; max-width: min(1400px, 94vw); max-height: 92vh; }
+  dialog.lightbox::backdrop { background: rgba(5, 12, 22, 0.88); }
+  dialog.lightbox img { display: block; max-width: 100%; max-height: 84vh; margin: 0 auto; border-radius: var(--radius-sm); }
+  dialog.lightbox p { text-align: center; color: var(--texto); margin-top: 12px; font-size: 0.95rem; }
+  .lightbox-close { position: fixed; top: 16px; right: 20px; background: var(--surface); color: var(--texto); border: 1px solid var(--border); border-radius: 100px; width: 42px; height: 42px; font-size: 1.3rem; cursor: pointer; }
+
+  .feature-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 860px) { .feature-grid-3 { grid-template-columns: 1fr; } }
+  .shot img, .shot button { max-width: 100%; }
+
+  /* Lista de funcionalidades */
+  .check-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 32px; }
+  @media (max-width: 960px) { .check-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .check-list { grid-template-columns: 1fr; } }
+  .check-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--texto); font-size: 1rem; line-height: 1.4; }
+  .check-list svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--azul-claro); margin-top: 1px; }
+  .section-alt .shot button { background: #f5f7fa; }
+
+  /* FAQ */
+  .faq { max-width: 760px; }
+  .faq details { border-bottom: 1px solid var(--border); padding: 18px 0; }
+  .faq summary { cursor: pointer; font-weight: 600; color: var(--texto); font-size: 1rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--azul-claro); font-size: 1.3rem; line-height: 1; }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq details p { margin-top: 10px; font-size: 0.95rem; }
 </style>
 </head>
 <body>
@@ -53,119 +126,260 @@
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Início</a> / NexGrade</div>
-      <span class="pill"><span class="status-dot pilot"></span> Piloto ativo</span>
-      <h1 style="margin-top: 18px;">O gerador inteligente de horários escolares que simplifica a gestão e elimina conflitos de grade.</h1>
+      <span class="pill"><span class="status-dot pilot"></span> Piloto ativo em duas escolas estaduais</span>
+      <h1 style="margin-top: 18px;">A plataforma que organiza a operação pedagógica do início ao fim.</h1>
       <p>
-        O NexGrade é a solução definitiva de engenharia de horários
-        escolares desenvolvida para transformar a complexidade da montagem
-        de turmas em um processo ágil, preciso e seguro. Combinando um
-        poderoso motor de inteligência matemática com uma interface
-        intuitiva, o NexGrade foi feito para resolver a rotina de diretores
-        e coordenadores pedagógicos em minutos — e não semanas.
+        Grade horária otimizada, agenda do professor no celular, reserva de
+        espaços e um assistente de IA, num só sistema, feito para a realidade
+        das escolas da rede estadual do Paraná.
       </p>
       <div class="hero-actions" style="margin-top: 30px;">
         <a href="contato.html" class="btn btn-primary">Pedir demonstração</a>
+        <a href="#resultados" class="btn btn-ghost">Ver resultados reais</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="resultados">
+    <div class="container">
+      <span class="eyebrow">Resultado real</span>
+      <div class="result-grid" style="margin-top: 14px;">
+        <div>
+          <div class="result-big">&minus;93%</div>
+          <h2 style="margin-top: 10px;">de janelas na agenda dos professores</h2>
+          <p class="result-lead">
+            Na escola piloto, mesma semana, mesmos professores e turmas: de 184
+            para 12 janelas nos três turnos, sem mudar a carga horária de
+            ninguém e com a hora-atividade distribuída pela tabela oficial.
+          </p>
+          <div class="shift-bars">
+          <div class="shift-row">
+            <h4>Matutino</h4>
+            <div class="bar bar-before"><span class="bar-label">Antes</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">100</span></div>
+            <div class="bar bar-after"><span class="bar-label">Com NexGrade</span><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><span class="bar-value">2</span></div>
+          </div>
+          <div class="shift-row">
+            <h4>Vespertino</h4>
+            <div class="bar bar-before"><span class="bar-label">Antes</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bar-value">60</span></div>
+            <div class="bar bar-after"><span class="bar-label">Com NexGrade</span><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div><span class="bar-value">9</span></div>
+          </div>
+          <div class="shift-row">
+            <h4>Noturno</h4>
+            <div class="bar bar-before"><span class="bar-label">Antes</span><div class="bar-track"><div class="bar-fill" style="width:24%"></div></div><span class="bar-value">24</span></div>
+            <div class="bar bar-after"><span class="bar-label">Com NexGrade</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span class="bar-value">1</span></div>
+          </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <h3>Segunda escola: noturno já com as regras de 2026</h3>
+          <div class="case-stats">
+            <div><strong>&minus;78%</strong><span>de janelas, de 23 para 5</span></div>
+            <div><strong>206</strong><span>aulas, sendo 181 presenciais e 25 assíncronas</span></div>
+            <div><strong>3 trios</strong><span>de docência sempre no mesmo horário</span></div>
+            <div><strong>~3 s</strong><span>para o motor encontrar a melhor grade</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="source-note">Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, com todas as regras de cada escola respeitadas.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Da escola cadastrada à grade oficial em três passos</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Os dados de sempre</h3>
+          <p>Professores, turmas, disciplinas, carga horária e disponibilidade, os mesmos dados que a escola já usa. O catálogo da SEED-PR já vem carregado.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>O motor testa milhares de combinações</h3>
+          <p>Um motor de otimização próprio busca a distribuição com o menor número de janelas possível, respeitando cada regra da escola.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Revisão antes de aplicar</h3>
+          <p>A grade nova fica em modo de teste. A coordenação revisa, compara e só então aplica como oficial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="funcionalidades">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Funcionalidades</span>
+        <h2>Tudo o que a escola usa, num só sistema</h2>
+        <p>Da montagem da escola à agenda do professor: grade, hora-atividade, reservas e relatórios.</p>
+      </div>
+      <ul class="check-list">
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Catálogo oficial SEED-PR</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendário letivo oficial</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Cadastro de professores e habilitações</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Disponibilidade por professor</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Montagem de turmas pela matriz</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Co-docência</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Docência por trio</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Aulas assíncronas</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Regras de distribuição</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Geração otimizada da grade</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Redução de janelas</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hora-atividade automática</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Modo Experimental para comparar</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alerta de conflitos</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Visão por turno, turma e professor</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF por turma e por professor</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Exportação em PDF, Excel e CSV</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Controle de ponto</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Relatório de carga horária</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Reserva de espaços</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Regras de reserva por professor</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Minha Agenda no celular e no computador</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Assistente de IA no sistema</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Volta para a grade anterior</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="telas">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Telas do sistema</span>
+        <h2>Conheça o NexGrade por dentro</h2>
+        <p>Clique em qualquer tela para ampliar.</p>
+      </div>
+
+      <h3 class="shots-group-title">Para a coordenação</h3>
+      <div class="shots">
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/visao-geral.webp" data-caption="Visão geral" aria-label="Ampliar tela: Visão geral">
+            <img src="img/nexgrade/visao-geral.webp" alt="Tela Visão Geral do NexGrade com indicadores da escola" loading="lazy">
+          </button>
+          <figcaption><strong>Visão geral</strong><span>Professores, turmas, aulas distribuídas e conflitos numa tela só, com o menu na ordem em que a escola trabalha.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/catalogo-seed.webp" data-caption="Catálogo SEED-PR" aria-label="Ampliar tela: Catálogo SEED-PR">
+            <img src="img/nexgrade/catalogo-seed.webp" alt="Tela do catálogo oficial de cursos da SEED-PR no NexGrade" loading="lazy">
+          </button>
+          <figcaption><strong>Catálogo SEED-PR</strong><span>Cursos oficiais com matrizes e cargas horárias. A escola só marca os cursos que oferta.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/calendario.webp" data-caption="Calendário escolar" aria-label="Ampliar tela: Calendário escolar">
+            <img src="img/nexgrade/calendario.webp" alt="Tela do calendário escolar com trimestres e dias letivos" loading="lazy">
+          </button>
+          <figcaption><strong>Calendário escolar</strong><span>Trimestres, feriados e recessos do ano letivo, com os dias letivos contados automaticamente.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/montagem-turma.webp" data-caption="Montagem da turma" aria-label="Ampliar tela: Montagem da turma">
+            <img src="img/nexgrade/montagem-turma.webp" alt="Tela de edição de turma com disciplinas da matriz e professores" loading="lazy">
+          </button>
+          <figcaption><strong>Montagem da turma</strong><span>Matriz, professores, co-docência, trio e aulas assíncronas na mesma janela.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/disponibilidade.webp" data-caption="Disponibilidade dos professores" aria-label="Ampliar tela: Disponibilidade dos professores">
+            <img src="img/nexgrade/disponibilidade.webp" alt="Quadro de disponibilidade semanal de um professor" loading="lazy">
+          </button>
+          <figcaption><strong>Disponibilidade dos professores</strong><span>Bloqueios, hora-atividade e aulas fixas de cada professor, num clique por horário.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/horario.webp" data-caption="Geração do horário" aria-label="Ampliar tela: Geração do horário">
+            <img src="img/nexgrade/horario.webp" alt="Tela de configuração e geração do horário" loading="lazy">
+          </button>
+          <figcaption><strong>Geração do horário</strong><span>Grade por turno, turma ou professor, com o Modo Experimental para gerar e comparar antes de aplicar.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/pdf-grade.webp" data-caption="PDF pronto para imprimir" aria-label="Ampliar tela: PDF pronto para imprimir">
+            <img src="img/nexgrade/pdf-grade.webp" alt="PDF da grade horária por professor com hora-atividade destacada" loading="lazy">
+          </button>
+          <figcaption><strong>PDF pronto para imprimir</strong><span>Grade por turma e por professor, no padrão que a escola já conhece, com a hora-atividade marcada.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/reservas.webp" data-caption="Reservas de espaços" aria-label="Ampliar tela: Reservas de espaços">
+            <img src="img/nexgrade/reservas.webp" alt="Painel de reservas de espaços do dia" loading="lazy">
+          </button>
+          <figcaption><strong>Reservas de espaços</strong><span>Salas, quadra e laboratórios num quadro único, ligado ao horário de cada professor.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/assistente-ia.webp" data-caption="Assistente de IA" aria-label="Ampliar tela: Assistente de IA">
+            <img src="img/nexgrade/assistente-ia.webp" alt="Tela do assistente de IA do NexGrade" loading="lazy">
+          </button>
+          <figcaption><strong>Assistente de IA</strong><span>Analisa a grade, tira dúvidas da coordenação e faz ajustes sempre com confirmação.</span></figcaption>
+        </figure>
+      </div>
+
+      <h3 class="shots-group-title">Para o professor</h3>
+      <div class="shots shots-phone">
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/agenda-celular.webp" data-caption="Minha Agenda no celular" aria-label="Ampliar tela: Minha Agenda no celular">
+            <img src="img/nexgrade/agenda-celular.webp" alt="Minha Agenda do professor no celular, modo dia" loading="lazy">
+          </button>
+          <figcaption><strong>Minha Agenda no celular</strong><span>Um dia por vez, com abas por turno, hora-atividade sinalizada e PDF da agenda.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/solicitar-reserva.webp" data-caption="Reserva em um toque" aria-label="Ampliar tela: Reserva em um toque">
+            <img src="img/nexgrade/solicitar-reserva.webp" alt="Formulário de reserva de espaço no celular" loading="lazy">
+          </button>
+          <figcaption><strong>Reserva em um toque</strong><span>Escolhe o espaço, o dia e a aula, vendo na hora o que está livre.</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <button type="button" data-full="img/nexgrade/agenda-computador.webp" data-caption="Minha Agenda no computador" aria-label="Ampliar tela: Minha Agenda no computador">
+            <img style="object-fit: contain; object-position: top center;" src="img/nexgrade/agenda-computador.webp" alt="Minha Agenda do professor no computador, visão semanal" loading="lazy">
+          </button>
+          <figcaption><strong>Minha Agenda no computador</strong><span>A mesma agenda do celular, com a semana inteira na tela e as reservas logo abaixo.</span></figcaption>
+        </figure>
+      </div>
+      <p class="shots-note">Telas reais do sistema. Nomes de escolas e de professores foram removidos ou substituídos por exemplos.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Diferenciais e Benefícios Comerciais</span>
-        <h2>Tudo que sua escola precisa pra organizar a grade sem esforço manual</h2>
+        <span class="eyebrow">Rede estadual do Paraná</span>
+        <h2>Feito para a realidade da rede pública do Paraná</h2>
       </div>
-
       <div class="section-block">
-        <span class="eyebrow">Diferencial 01</span>
-        <h3 class="section-block-title">Motor de Geração Inteligente e Configurável</h3>
         <div class="feature-grid">
           <div class="feature-item">
-            <h4>Flexibilidade Total de Regras</h4>
-            <p>Configure facilmente parâmetros como aulas geminadas, disponibilidade de professores, restrições de dias/turnos e aulas com horários fixos.</p>
+            <h4>Catálogo oficial pronto para usar</h4>
+            <p>78 cursos oficiais, com Ensino Regular e 63 técnicos, as matrizes de cada série, as disciplinas e as cargas. Toda escola já começa com o catálogo.</p>
           </div>
           <div class="feature-item">
-            <h4>Co-docência e Turmas Híbridas</h4>
-            <p>Suporte nativo para disciplinas com múltiplos professores e grades personalizadas para os novos modelos de itinerários e formações complementares.</p>
+            <h4>Hora-atividade conforme a SEED-PR</h4>
+            <p>A proporção aula/hora-atividade segue a Resolução 7.200/2025 e fica configurável, porque a regra está em discussão judicial e pode mudar.</p>
           </div>
           <div class="feature-item">
-            <h4>Visão Multiturno</h4>
-            <p>Visualização completa e dinâmica da matriz escolar por turno (matutino, vespertino, noturno e período integral) em uma única tela.</p>
+            <h4>Calendário letivo oficial</h4>
+            <p>Trimestres, dias letivos, feriados e recessos da SEED-PR já cadastrados. A grade nasce alinhada ao calendário da rede.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Reserva de espaços ligada à grade</h4>
+            <p>Laboratório, quadra e sala de recursos num lugar só, com limite semanal e prioridade por professor definidos pela coordenação.</p>
           </div>
         </div>
       </div>
-
       <div class="section-block">
-        <span class="eyebrow">Diferencial 02</span>
-        <h3 class="section-block-title">Diagnóstico Inteligente e Resolução Rápida de Conflitos</h3>
-        <div class="feature-grid">
+        <span class="eyebrow">Regras de 2026</span>
+        <h3 class="section-block-title">As novas regras da SEED-PR já funcionam no sistema</h3>
+        <div class="feature-grid feature-grid-3">
           <div class="feature-item">
-            <h4>Detecção Automática</h4>
-            <p>Identificação em tempo real de choque de horários, alocação duplicada de corpo docente e inconsistências na carga horária de apoio.</p>
+            <h4>Aulas assíncronas</h4>
+            <p>Ocupam a agenda do professor sem tirar aula da turma. O gerador prefere o meio do turno e o app avisa quando é preciso registrar entrada ou saída.</p>
           </div>
           <div class="feature-item">
-            <h4>Resolução com 1-Clique</h4>
-            <p>Acesso direto ao painel "Ver Disponibilidade" a partir de qualquer alerta de conflito, permitindo ajustes imediatos sem perder o controle da grade global.</p>
+            <h4>Docência por trio</h4>
+            <p>Três disciplinas do itinerário, cada uma com seu professor, sempre juntas no mesmo dia e horário. O sistema confere cargas e professores antes de gerar.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Co-docência</h4>
+            <p>Dois professores na mesma aula, titular e apoio, com a carga contando para os dois e a grade mostrando os dois nomes.</p>
           </div>
         </div>
-      </div>
-
-      <div class="section-block">
-        <span class="eyebrow">Diferencial 03</span>
-        <h3 class="section-block-title">Integração Aberta e Flexível</h3>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <h4>Conectividade Nativa</h4>
-            <p>Projetado para integrar-se facilmente aos sistemas e bancos de dados acadêmicos já utilizados pela sua escola, garantindo sincronização fluida e sem retrabalho.</p>
-          </div>
-          <div class="feature-item">
-            <h4>Cálculo Preciso de Carga Horária</h4>
-            <p>Gestão automatizada e alinhada às normas regulatórias oficiais para cálculo de hora-atividade e jornada docente.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-block">
-        <span class="eyebrow">Diferencial 04</span>
-        <h3 class="section-block-title">Documentação Pronta e Exportação Personalizada</h3>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <h4>Relatórios em PDF Oficiais</h4>
-            <p>Emissão instantânea de grades em formatos padrão de impressão, prontos para a muralha de avisos ou distribuição ao corpo docente.</p>
-          </div>
-          <div class="feature-item">
-            <h4>Gestão Dinâmica do Calendário</h4>
-            <p>Seletor rápido por semana no cabeçalho dos relatórios, ideal para acompanhamento de substituições e mudanças pontuais.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-block">
-        <span class="eyebrow">Diferencial 05</span>
-        <h3 class="section-block-title">Arquitetura Corporativa, Multi-escola e Inteligente</h3>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <h4>Multi-tenant e Segurança de Dados</h4>
-            <p>Ambiência isolada por instituição de ensino, garantindo privacidade, segurança LGPD e gestão centralizada para redes com mais de uma unidade.</p>
-          </div>
-          <div class="feature-item">
-            <h4>Alta Disponibilidade e Monitoramento</h4>
-            <p>Estrutura monitorada 24/7 com garantia de uptime para acesso ininterrupto durante os períodos críticos de planejamento.</p>
-          </div>
-          <div class="feature-item">
-            <h4>Assistência Continuada com IA</h4>
-            <p>Suporte inteligente integrado para tirar dúvidas e auxiliar na tomada de decisão durante o desenho da grade.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tech-tags">
-        <span class="tech-tag">TypeScript</span>
-        <span class="tech-tag">Node.js + Express</span>
-        <span class="tech-tag">Drizzle ORM</span>
-        <span class="tech-tag">PostgreSQL (Supabase)</span>
-        <span class="tech-tag">React + Vite</span>
-        <span class="tech-tag">Clerk (autenticação multi-tenant)</span>
       </div>
     </div>
   </section>
@@ -173,36 +387,44 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Comparativo</span>
-        <h2>Por que escolher o NexGrade?</h2>
+        <span class="eyebrow">Segurança e controle</span>
+        <h2>Seus dados, suas regras, sua decisão final</h2>
       </div>
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; min-width: 560px;">
-          <thead>
-            <tr style="border-bottom: 2px solid var(--border);">
-              <th style="text-align: left; padding: 14px 16px; font-family: var(--f-display); font-size: 0.92rem; color: var(--texto-muted);">Gestão Tradicional (Planilhas / Manual)</th>
-              <th style="text-align: left; padding: 14px 16px; font-family: var(--f-display); font-size: 0.92rem; color: var(--azul-claro);">Gestão Inteligente com NexGrade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto-muted);">Semanas de trabalho e alto risco de erros humanos</td>
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto);">Grade gerada e validada em minutos</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto-muted);">Dificuldade para gerenciar restrições de professores</td>
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto);">Respeito automático às agendas e regras docentes</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto-muted);">Conflitos ocultos e retrabalho durante o ano letivo</td>
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto);">Mapeamento preventivo e resolução em 1 clique</td>
-            </tr>
-            <tr>
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto-muted);">Dados isolados e dificuldade de exportação</td>
-              <td style="padding: 16px; font-size: 0.95rem; color: var(--texto);">Integração fácil com o ecossistema que sua escola já usa</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>Cada escola tem sua própria base</h4>
+          <p>Professores, turmas e disponibilidade de uma escola nunca se misturam com os de outra.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Nada é aplicado sem revisão</h4>
+          <p>Toda grade gerada fica em modo de teste até a coordenação aprovar.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Sempre reversível</h4>
+          <p>Se algo não ficar bom, é possível voltar para a grade anterior a qualquer momento.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Relatórios para conferir e homologar</h4>
+          <p>Grade, controle de ponto e carga horária em PDF, Excel ou CSV.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2>Dúvidas comuns das coordenações</h2>
+      </div>
+      <div class="faq">
+        <details><summary>O NexGrade já vem com as matrizes da SEED-PR?</summary><p>Sim. O catálogo oficial vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta.</p></details>
+        <details><summary>Como a hora-atividade é calculada?</summary><p>Pela tabela oficial da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar.</p></details>
+        <details><summary>A grade nova substitui a atual automaticamente?</summary><p>Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior.</p></details>
+        <details><summary>O que é uma janela na agenda do professor?</summary><p>É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola.</p></details>
+        <details><summary>Os professores precisam instalar algum aplicativo?</summary><p>Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps.</p></details>
+        <details><summary>Os dados de uma escola ficam visíveis para outra?</summary><p>Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição.</p></details>
+        <details><summary>Quanto tempo leva para começar?</summary><p>Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas e o assistente de IA ficam prontos em dias, com a coordenação revisando cada passo.</p></details>
       </div>
     </div>
   </section>
@@ -211,13 +433,19 @@
     <div class="container">
       <div class="cta-band">
         <div>
-          <h2>Agende uma demonstração prática do NexGrade</h2>
-          <p>Descubra como otimizar o tempo da sua equipe gestora com tecnologia de verdade em produção.</p>
+          <h2>Vamos organizar a grade de horários da sua escola?</h2>
+          <p>Traga os dados que já existem hoje. A gente prepara tudo com você revisando cada passo.</p>
         </div>
         <a href="contato.html" class="btn btn-primary">Pedir demonstração</a>
       </div>
     </div>
   </section>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Tela ampliada">
+    <button type="button" class="lightbox-close" aria-label="Fechar">&times;</button>
+    <img src="" alt="">
+    <p></p>
+  </dialog>
 
 </main>
 
@@ -253,5 +481,24 @@
 </footer>
 
 <script src="js/nav.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const box = document.getElementById("lightbox");
+  if (!box || typeof box.showModal !== "function") return;
+  const img = box.querySelector("img");
+  const cap = box.querySelector("p");
+  document.querySelectorAll(".shot button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      img.src = btn.dataset.full;
+      img.alt = btn.querySelector("img").alt;
+      cap.textContent = btn.dataset.caption;
+      box.showModal();
+    });
+  });
+  box.querySelector(".lightbox-close").addEventListener("click", () => box.close());
+  box.addEventListener("click", (e) => { if (e.target === box) box.close(); });
+});
+</script>
 </body>
 </html>
