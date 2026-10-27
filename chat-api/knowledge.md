@@ -38,13 +38,13 @@ Conhecer o NexGrade →
 Soluções · Em produção
 Soluções Educacionais
 Nex Reserva e Nex Cantina: sistemas reais em produção, eliminando
-processos manuais numa escola estadual do Paraná com mais de
+processos manuais em uma escola estadual do Paraná com mais de
 1.500 alunos.
 Conhecer as soluções →
 Projeto · Piloto ativo
 Yardflow
 Monitoramento de caminhões em pátio industrial, da chegada à
-portaria até a doca — piloto em operação numa grande montadora.
+portaria até a doca — piloto em operação em uma grande montadora.
 Conhecer o Yardflow →
 Como trabalhamos
 Tecnologia testada onde ela precisa funcionar.
@@ -113,7 +113,7 @@ Falar com a gente
 Em implantação em três colégios estaduais
 A plataforma que organiza a operação pedagógica do início ao fim.
 Grade horária otimizada, gravação da grade no RCO, agenda do professor
-no celular, reserva de espaços e um assistente de IA, num só sistema,
+no celular, reserva de espaços e um assistente de IA, em um só sistema,
 feito para a realidade das escolas da rede estadual do Paraná.
 Pedir demonstração
 Ver resultados reais
@@ -163,7 +163,7 @@ A grade nova fica em modo de teste. A coordenação revisa, compara e só então
 Grade gravada no RCO
 A grade oficial vai para o RCO sem redigitar aula por aula, inclusive as turmas com trio.
 Funcionalidades
-Tudo o que a escola usa, num só sistema
+Tudo o que a escola usa, em um só sistema
 Da montagem da escola à agenda do professor: grade, hora-atividade, reservas e relatórios.
 Catálogo oficial SEED-PR
 Calendário letivo oficial
@@ -199,7 +199,7 @@ Conheça o NexGrade por dentro
 Clique em qualquer tela para ampliar.
 Para a coordenação
 Visão geral
-Professores, turmas, aulas distribuídas e conflitos numa tela só, com o menu na ordem em que a escola trabalha.
+Professores, turmas, aulas distribuídas e conflitos em uma única tela, com o menu na ordem em que a escola trabalha.
 Catálogo SEED-PR
 Cursos oficiais com matrizes e cargas horárias. A escola só marca os cursos que oferta.
 Calendário escolar
@@ -207,13 +207,13 @@ Trimestres, feriados e recessos do ano letivo, com os dias letivos contados auto
 Montagem da turma
 Matriz, professores, co-docência, trio e aulas assíncronas na mesma janela.
 Disponibilidade dos professores
-Bloqueios, hora-atividade e aulas fixas de cada professor, num clique por horário.
+Bloqueios, hora-atividade e aulas fixas de cada professor, com um clique por horário.
 Geração do horário
 Grade por turno, turma ou professor, com o Modo Experimental para gerar e comparar antes de aplicar.
 PDF pronto para imprimir
 Grade por turma e por professor, no padrão que a escola já conhece, com a hora-atividade marcada.
 Reservas de espaços
-Salas, quadra e laboratórios num quadro único, ligado ao horário de cada professor.
+Salas, quadra e laboratórios em um quadro único, ligado ao horário de cada professor.
 Assistente de IA
 Analisa a grade, tira dúvidas da coordenação e faz ajustes sempre com confirmação.
 Para o professor
@@ -233,7 +233,7 @@ A proporção aula/hora-atividade segue a Resolução 7.200/2025 e fica configur
 Calendário letivo oficial
 Trimestres, dias letivos, feriados e recessos da SEED-PR já cadastrados. A grade nasce alinhada ao calendário da rede.
 Reserva de espaços ligada à grade
-Laboratório, quadra e sala de recursos num lugar só, com limite semanal e prioridade por professor definidos pela coordenação.
+Laboratório, quadra e sala de recursos em um só lugar, com limite semanal e prioridade por professor definidos pela coordenação.
 Regras de 2026
 As novas regras da SEED-PR já funcionam no sistema
 Aulas assíncronas
@@ -360,7 +360,7 @@ Piloto ativo · Indústria automotiva
 Saber onde está cada caminhão do pátio, sem rádio e sem ligação.
 Yardflow acompanha a localização de caminhões dentro do pátio em tempo
 real e avisa o motorista quando ele é chamado para a doca — piloto em
-operação numa grande montadora do setor automotivo.
+operação em uma grande montadora do setor automotivo.
 Falar sobre um piloto
 O fluxo
 Da portaria até a saída, sem ponto cego.
@@ -371,7 +371,7 @@ Motorista escaneia o QR Code, abre o aplicativo web instalável (PWA) e informa 
 3. Rastreamento em tempo real
 Com permissão de localização concedida, o celular do motorista envia coordenadas periodicamente enquanto ele está no pátio.
 4. Chamada para a doca
-Operador acompanha todos os caminhões no pátio num painel único e chama o motorista para a doca com um clique — o motorista recebe notificação push, mesmo com a tela bloqueada.
+Operador acompanha todos os caminhões no pátio em um painel único e chama o motorista para a doca com um clique — o motorista recebe notificação push, mesmo com a tela bloqueada.
 5. Saída registrada
 Ao sair da área do pátio (geofence) ou por confirmação manual do operador, o tempo total de permanência fica registrado — sem falso encerramento por imprecisão de GPS.
 Painéis por perfil
