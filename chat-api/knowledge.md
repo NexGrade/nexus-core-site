@@ -147,7 +147,15 @@ aulas, sendo 181 presenciais e 25 assíncronas
 de docência sempre no mesmo horário
 ~3 s
 para o motor encontrar a melhor grade
-Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, com todas as regras de cada escola respeitadas.
+Outubro de 2026
+Zero janelas no turno da manhã em duas escolas
+0
+janelas na manhã, contando aula e hora-atividade, em duas escolas
+1
+janela no turno da tarde de uma delas
+Grade oficial
+em uso pelas escolas, não só uma simulação
+Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, e grades oficiais em uso em outubro de 2026, com todas as regras de cada escola respeitadas.
 Como funciona
 Da escola cadastrada à grade no RCO em quatro passos
 1
