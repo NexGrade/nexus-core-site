@@ -13,7 +13,7 @@ protótipos de vitrine — entregamos tecnologia em produção, pronta
 para gerar resultados.
 Falar com a gente
 Ver o que já rodamos
-Piloto ativo
+Em implantação
 NexGrade
 Gestão de horário escolar
 Em produção
@@ -29,11 +29,11 @@ performance em produção — sustentando redes de ensino com mais de
 1.500 alunos, otimizando processos em grandes montadoras do setor
 automotivo e garantindo integrações que funcionam de verdade na
 ponta.
-Produto · Piloto ativo
+Produto · Em implantação
 NexGrade
-Geração de horário escolar integrada à SEED-PR, com a integração
-ao RCO em desenvolvimento — construído para resolver exatamente
-onde os sistemas concorrentes falham.
+Geração de horário escolar integrada à SEED-PR, com a grade
+gravada no RCO, inclusive turmas com trio e período integral —
+construído para resolver exatamente onde os sistemas concorrentes falham.
 Conhecer o NexGrade →
 Soluções · Em produção
 Soluções Educacionais
@@ -110,11 +110,11 @@ Falar com a gente
 ## NexGrade (/nexgrade.html)
 
 / NexGrade
-Piloto ativo em duas escolas estaduais
+Em implantação em três colégios estaduais
 A plataforma que organiza a operação pedagógica do início ao fim.
-Grade horária otimizada, agenda do professor no celular, reserva de
-espaços e um assistente de IA, num só sistema, feito para a realidade
-das escolas da rede estadual do Paraná.
+Grade horária otimizada, gravação da grade no RCO, agenda do professor
+no celular, reserva de espaços e um assistente de IA, num só sistema,
+feito para a realidade das escolas da rede estadual do Paraná.
 Pedir demonstração
 Ver resultados reais
 Resultado real
@@ -149,7 +149,7 @@ de docência sempre no mesmo horário
 para o motor encontrar a melhor grade
 Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, com todas as regras de cada escola respeitadas.
 Como funciona
-Da escola cadastrada à grade oficial em três passos
+Da escola cadastrada à grade no RCO em quatro passos
 1
 Os dados de sempre
 Professores, turmas, disciplinas, carga horária e disponibilidade, os mesmos dados que a escola já usa. O catálogo da SEED-PR já vem carregado.
@@ -159,6 +159,9 @@ Um motor de otimização próprio busca a distribuição com o menor número de 
 3
 Revisão antes de aplicar
 A grade nova fica em modo de teste. A coordenação revisa, compara e só então aplica como oficial.
+4
+Grade gravada no RCO
+A grade oficial vai para o RCO sem redigitar aula por aula, inclusive as turmas com trio.
 Funcionalidades
 Tudo o que a escola usa, num só sistema
 Da montagem da escola à agenda do professor: grade, hora-atividade, reservas e relatórios.
@@ -170,6 +173,7 @@ Montagem de turmas pela matriz
 Co-docência
 Docência por trio
 Aulas assíncronas
+Turno Integral (manhã e tarde)
 Regras de distribuição
 Geração otimizada da grade
 Redução de janelas
@@ -179,6 +183,8 @@ Alerta de conflitos
 Visão por turno, turma e professor
 PDF por turma e por professor
 Exportação em PDF, Excel e CSV
+Gravação da grade no RCO
+Códigos SERE e Código Externo conferidos
 Controle de ponto
 Relatório de carga horária
 Reserva de espaços
@@ -186,6 +192,8 @@ Regras de reserva por professor
 Minha Agenda no celular e no computador
 Assistente de IA no sistema
 Volta para a grade anterior
+Aula manual com professores aptos
+Virada do ano letivo com desfazer
 Telas do sistema
 Conheça o NexGrade por dentro
 Clique em qualquer tela para ampliar.
@@ -234,6 +242,20 @@ Docência por trio
 Três disciplinas do itinerário, cada uma com seu professor, sempre juntas no mesmo dia e horário. O sistema confere cargas e professores antes de gerar.
 Co-docência
 Dois professores na mesma aula, titular e apoio, com a carga contando para os dois e a grade mostrando os dois nomes.
+Novo
+Da grade pronta direto para o RCO
+Todas as turmas de uma vez
+A grade oficial vira o arquivo que a secretaria importa no RCO, um por turno, igual ao PDF por turma. Sem redigitar aula por aula.
+Turmas com trio também
+O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, o NexGrade grava no próprio RCO, turma por turma, com prévia. O sistema avisa quais turmas precisam.
+Turno Integral
+Turmas de manhã e tarde, como a Formação de Docentes, com os horários iguais aos do RCO e sem choque de professor entre os turnos.
+Começo do ano
+O ano letivo novo sem começar do zero
+Virada do ano com desfazer
+Turmas e professores passam para o ano novo. Tudo fica guardado, e um botão desfaz a virada enquanto a grade nova não for oficial.
+Cadastro oficial do RCO
+A escola envia o arquivo do RCO e os códigos SERE do ano e as matrizes são conferidos antes de gerar, sem digitar código à mão.
 Segurança e controle
 Seus dados, suas regras, sua decisão final
 Cada escola tem sua própria base
@@ -254,12 +276,16 @@ A grade nova substitui a atual automaticamente?
 Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior.
 O que é uma janela na agenda do professor?
 É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola.
+O NexGrade lança a grade no RCO?
+Sim. A grade oficial vai para o RCO sem redigitar: todas as turmas pelo arquivo de importação do RCO e as turmas com trio gravadas direto no RCO, turma por turma, com prévia antes de gravar.
+Funciona com turma de período integral?
+Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário.
 Os professores precisam instalar algum aplicativo?
 Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps.
 Os dados de uma escola ficam visíveis para outra?
 Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição.
 Quanto tempo leva para começar?
-Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas e o assistente de IA ficam prontos em dias, com a coordenação revisando cada passo.
+Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e a gravação no RCO ficam prontos em dias, com a coordenação revisando cada passo.
 Vamos organizar a grade de horários da sua escola?
 Traga os dados que já existem hoje. A gente prepara tudo com você revisando cada passo.
 Pedir demonstração

@@ -1,6 +1,6 @@
 # Manual de Uso do NexGrade
 
-_Passo a passo das telas do sistema — mesma base consultada pelo Assistente de IA (atualizado em 04/10/2026)._
+_Passo a passo das telas do sistema — mesma base consultada pelo Assistente de IA (atualizado em 26/10/2026)._
 
 ## Sumário
 
@@ -13,286 +13,272 @@ _Passo a passo das telas do sistema — mesma base consultada pelo Assistente de
 7. Disponibilidade, hora-atividade (HA) e aulas fixas
 8. Salas e espaços
 9. Regras de Distribuição (limites usados na geração)
-10. Gerar a grade horária (CP-SAT, Modo Experimental e promover para oficial)
-11. Grade oficial e Conflitos (ver, filtrar, aula manual)
+10. Gerar a grade horária (Turma, Turno parcial, Turno inteiro, Modo Experimental e promover)
+11. Grade oficial e Conflitos (ver, filtrar, aula manual, HA e bloqueios pela grade)
 12. Reservas de salas e espaços
 13. Licenças e afastamentos
 14. Comunicados
 15. Importar Dados (CSV)
 16. Exportar Dados (PDFs, planilhas e relatórios)
-17. Escola (dados, configurações, conformidade SEED-PR e assinatura)
-18. Usuários e cargos (quem acessa o sistema)
-19. Histórico de alterações (auditoria)
-20. Minha Agenda (portal do professor)
-21. Assistente de IA (o que ele faz)
+17. Gravar a grade no RCO (arquivo XML e script de gravação)
+18. Arquivo do RCO (enviar à equipe NexGrade o cadastro oficial da escola)
+19. Códigos do RCO (SERE das turmas e Código Externo das disciplinas)
+20. Escola (dados, configurações, conformidade SEED-PR e assinatura)
+21. Usuários e cargos (quem acessa o sistema)
+22. Entrar no sistema, trocar de escola e sair
+23. Virada do ano letivo (preparar a escola para o ano seguinte)
+24. Histórico de alterações (auditoria)
+25. Minha Agenda (portal do professor)
+26. Assistente de IA (o que ele faz)
 
 ---
 
 ## 1. Primeiros passos — montar uma escola nova
 
 Ordem recomendada (é a mesma ordem do menu "Montagem da escola"):
-
 1. Escola → aba Dados da Escola: confira nome, CNPJ, INEP, NRE e turnos ofertados.
-2. Calendário e Turnos → aba Esquema de aulas por turno: configure os horários das aulas de cada turno (sem isso a Disponibilidade e a geração não funcionam para aquele turno).
+2. Calendário e Turnos → aba Esquema de aulas por turno: configure os horários das aulas de cada turno, inclusive o Integral se a escola tiver turma de período integral (sem isso a Disponibilidade e a geração não funcionam para aquele turno). Na aba Calendário letivo, confira o calendário (escola nova já vem com o oficial SEED-PR; se estiver vazio, clique em "Usar o calendário oficial SEED-PR").
 3. Cursos e Disciplinas → aba Catálogo SEED-PR: importe o catálogo oficial e marque os cursos que a escola oferece. Confira as disciplinas na aba Disciplinas.
 4. Professores: cadastre cada professor com as disciplinas que ele pode lecionar (ou use Importar Dados).
 5. Turmas: crie as turmas escolhendo curso e série/matriz; depois, na edição da turma, escolha o professor de cada disciplina.
 6. Disponibilidade: marque bloqueios e hora-atividade (HA) de cada professor, por turno.
 7. Salas: cadastre os espaços (salas, laboratórios, quadra).
-8. Horário → Modo Experimental: gere a grade com o motor CP-SAT, confira e clique em "Promover para oficial".
-9. Usuários: convide direção, coordenação, gestor de reservas e professores.
-
----
+8. Horário → Modo Experimental: gere a grade (botão Turno inteiro), compare com "Simular promoção" e clique em "Promover para oficial".
+9. Usuários: libere o acesso da direção, coordenação, secretaria e gestor de reservas. Professores não precisam: entram com o e-mail do cadastro em Professores.
+10. Códigos do RCO e Arquivo do RCO: confira os códigos SERE das turmas e os Códigos Externos das disciplinas; se a equipe NexGrade pedir, envie o arquivo da Grade de Horário do RCO.
+11. Exportar Dados → Exportar para o RCO: grave a grade no RCO (veja o capítulo "Gravar a grade no RCO (arquivo XML e script de gravação)").
 
 ## 2. Visão Geral (painel inicial)
 
 Menu Visão Geral. Mostra os totais da escola: Professores, Turmas, Disciplinas, Salas, Aulas Distribuídas, Turmas sem Horário, Conflitos Detectados, Licenças Ativas e Comunicados Não Lidos.
-
 - O bloco "Atenção necessária" destaca o que precisa de ação (ex.: turmas sem horário, conflitos).
 - O botão "Ver Grade Horária" leva para Horário → Grade.
-
----
 
 ## 3. Calendário e Turnos (calendário letivo e horários das aulas)
 
 Menu Calendário e Turnos. Tem duas abas:
 
-**ABA CALENDÁRIO LETIVO**
-
+ABA CALENDÁRIO LETIVO
 - Mostra feriados, recessos, pontos facultativos, dias de estudo e planejamento, início/fim do ano letivo e dos trimestres oficiais SEED-PR, com o total de dias letivos.
-- Use as setas para trocar de mês. Esta aba é de consulta.
+- Use as setas para trocar de mês. Cores: cada trimestre tem um tom (1º azul, 2º verde, 3º lilás), as semanas alternam entre tom claro e um pouco mais forte, feriado fica rosa, recesso âmbar e fim de semana cinza. As datas aparecem também na Minha Agenda dos professores.
+- Se o ano ainda não tem calendário, aparece o botão "Usar o calendário oficial SEED-PR": um clique grava os 3 trimestres (201 dias letivos em 2026) e os feriados nacionais. Escola nova já começa com ele.
+- Direção, coordenação e secretaria podem ajustar: "Editar trimestres" (datas e dias letivos), "Adicionar data" ou clicar num dia (recesso, feriado municipal, ponto facultativo, reposição) e o lápis/lixeira de cada data. "Restaurar oficial SEED-PR" volta ao calendário oficial e apaga os ajustes.
+- Sem trimestres cadastrados, a aba Conflitos mostra "turma sem calendário" em todas as turmas.
+- Gestor de reservas e professor só consultam.
 
 ABA ESQUEMA DE AULAS POR TURNO (é aqui que se define o horário de cada aula)
-
 1. Escolha o turno (matutino, vespertino ou noturno). No matutino, escolha também o nível: Fundamental (6º–9º ano) ou Médio/Técnico (1ª–3ª série), porque podem ter quantidades de aulas diferentes.
 2. Preencha: Horário de início, Quantidade de aulas, Duração de cada aula (min), Intervalo após a aula nº e Duração do intervalo (min).
 3. Clique em Continuar e confira a Pré-visualização dos horários.
 4. Clique em "Salvar esquema". Repita para cada turno/nível.
-Observação: aulas fixas não ficam mais aqui — ficam na Disponibilidade de cada professor (botão "Modo fixar aula").
 
----
+TURNO INTEGRAL (turma de manhã e tarde, ex.: Formação de Docentes)
+- Botão "Integral" na mesma aba. O NexGrade sugere as aulas juntando a manhã (Médio/Técnico) e a tarde; ajuste aula por aula para ficar IGUAL ao RCO da escola (no Mário Braga a 9ª aula é 15:00, não 14:45, porque o intervalo da tarde do integral é depois da 2ª aula) e clique em Salvar.
+- Cada aula do integral fica ligada à aula da manhã ou da tarde que acontece no mesmo horário: o professor da turma integral não pode estar em outra turma nesse horário, e a disponibilidade dele continua sendo a da manhã/tarde (não precisa cadastrar nada novo).
+Observação: aulas fixas não ficam mais aqui — ficam na Disponibilidade de cada professor (botão "Modo fixar aula").
 
 ## 4. Cursos e Disciplinas (catálogo SEED-PR, cursos, matrizes e disciplinas)
 
 Menu Cursos e Disciplinas. Tem três abas:
 
-**ABA CATÁLOGO SEED-PR**
-
+ABA CATÁLOGO SEED-PR
 1. Clique em "Importar catálogo oficial SEED-PR" — traz todos os cursos, matrizes e disciplinas oficiais.
 2. Marque os cursos que a escola oferece (use "Buscar curso..." e o filtro "Só ofertados"). Só os cursos ofertados aparecem em Cursos e nas Turmas.
 
-**ABA CURSOS E MATRIZ CURRICULAR**
-
+ABA CURSOS E MATRIZ CURRICULAR
 - Clique num curso para expandir e ver as matrizes por série/ano.
 - "Novo Curso": informe Nível, Eixo tecnológico, Forma de oferta e, se tiver, o Código do curso. Depois de criado, expanda o curso para adicionar matrizes.
 - "Nova matriz (série/ano)" cria a matriz de uma série. "Aplicar modelo oficial SEED-PR" preenche a matriz inteira com as disciplinas e cargas oficiais (disciplinas que não existem são criadas sozinhas). Em cursos técnicos, se o sistema não casar o curso sozinho, escolha o modelo oficial na lista.
 - Dentro da matriz: "Adicionar disciplina" (Categoria, Disciplina, Carga), "Código SERE (opcional)" e "Copiar esta grade para outras turmas" / "Aplicar esta matriz às turmas" para atualizar turmas já criadas.
 
-**ABA DISCIPLINAS**
-
+ABA DISCIPLINAS
 - Por padrão mostra só as disciplinas em uso pela escola; marque "Mostrar catálogo completo" para ver todas.
 - "Adicionar do Catálogo" traz disciplinas oficiais (SEED-PR/SAE) já com nome e código corretos.
 - "Nova Disciplina": Nome, Sigla (usada nos PDFs compactos), Aulas por Semana, Cor no Horário, Categoria curricular fixa (opcional), Código SAE (opcional) e Sala exigida (ex.: Laboratório de Informática, Quadra).
 - Os nomes seguem o padrão automático: inicial maiúscula em cada palavra e números romanos (I, II, III).
 - Remover uma disciplina tira ela de todas as turmas e professores.
 
----
-
 ## 5. Professores (cadastro, edição, carga horária e portal)
 
-**CADASTRAR**
-
+CADASTRAR
 1. Menu Professores → "Novo Professor".
-2. Preencha Nome Completo e Email (obrigatório — é o e-mail que o professor usa para entrar na Minha Agenda). Telefone é opcional.
+2. Preencha Nome Completo e Email (obrigatório — é o e-mail que o professor usa para entrar na Minha Agenda). Telefone é opcional. O e-mail cadastrado já libera o acesso do professor à Minha Agenda, sem convite: basta ele criar a conta com esse mesmo e-mail no endereço do sistema.
 3. Em Disciplinas, marque todas que ele pode lecionar (isso diz em quais disciplinas ele é habilitado; a ligação com as turmas é feita em Turmas).
 4. Clique em "Salvar Professor(a)".
 Muitos professores de uma vez: use Importar Dados (tipo Professores).
 
 EDITAR / CONSULTAR (clique no professor na lista)
-
 - Status do Professor: professores inativos não recebem aulas no horário automático.
 - Carga Horária: total semanal, por turno, HA obrigatória x necessária (institucional), HA* (contraturno) e distribuição por dia.
 - "Gerenciar disponibilidade": abre a Disponibilidade já com esse professor.
 - "Corrigir Conflitos (recomendado)": depois de mudar a disponibilidade, move só as aulas dele que ficaram em conflito, sem refazer a turma inteira. Mostra o que foi movido e o que precisa de ajuste manual.
 - "Regenerar Horário (prévia)": gera uma prévia só das turmas desse professor; ela fica em Horário → Modo Experimental até alguém promover.
 
-**LISTA**
-
+LISTA
 - Busca por nome, filtro por disciplina e visualização em grade ou lista.
-- O ícone "Convidar para o portal do professor" envia o convite por e-mail para ele acessar a Minha Agenda.
+- O ícone "Convidar para o portal do professor" confirma que o acesso está liberado e mostra o endereço e o e-mail que o professor deve usar (não envia e-mail; avise o professor por WhatsApp ou pessoalmente).
 - Remover professor tira o cadastro (confirmação obrigatória).
-
----
 
 ## 6. Turmas (cadastro, professores por disciplina, co-docência, trio e assíncronas)
 
-**CRIAR TURMA**
-
+CRIAR TURMA
 1. Menu Turmas → "Nova Turma".
 2. Em "Curso e Matriz Curricular (recomendado)": escolha Nível, Curso e Série/Matriz — as disciplinas e cargas da matriz entram automaticamente. (Sem matriz, marque as disciplinas à mão em "Disciplinas da Turma (manual)".)
-3. Informe Nome da Turma (ex.: 1º Ano A), Turno e Ano Letivo e salve.
+3. Informe Nome da Turma (ex.: 1º Ano A), Turno e Ano Letivo e salve. Turno "Integral (manhã e tarde)" é para turma de período integral; antes, salve o esquema Integral em Calendário e Turnos.
+4. Código da turma no SERE (para o RCO) e Código SERE da parte IF (só 3º ano com duas turmas no RCO): também dá para preencher depois, em Códigos do RCO.
 
 DEFINIR OS PROFESSORES (abrir a turma para editar)
-
 - Na seção "Professores, co-docência e trio", escolha o professor de cada disciplina. Os "Habilitados nesta disciplina" aparecem primeiro. Tudo grava na hora.
 - Co-docência (dois professores dando a mesma aula juntos): botão "+ co-docência" na disciplina.
 - Trio (3 disciplinas, cada uma com seu professor, sempre no mesmo dia e horário): "+ Criar trio" e marque as 3 disciplinas. Elas precisam ter a mesma carga semanal e já ter professor definido. Para desfazer, use "desfazer" no trio.
 - Assíncronas/sem.: quantas aulas semanais da disciplina são assíncronas (a aula assíncrona ocupa o professor, não a turma).
 
-**HORÁRIO DA TURMA**
-
-- Na lista, o botão "Horário" abre a grade da turma, com "Professores por Disciplina", aplicação de matriz e o botão "Gerar via CP-SAT" (gera uma prévia no Modo Experimental; a grade oficial só muda depois de promover).
+HORÁRIO DA TURMA
+- Na lista, o botão "Horário" abre a grade da turma, com "Professores por Disciplina", aplicação de matriz e o botão "Gerar grade" (gera uma prévia no Modo Experimental; a grade oficial só muda depois de promover).
 - Remover turma apaga também todo o horário dela.
-
----
 
 ## 7. Disponibilidade, hora-atividade (HA) e aulas fixas
 
 Menu Disponibilidade (ou, no cadastro do professor, "Gerenciar disponibilidade").
-
 1. Escolha o professor (dá para buscar pelo nome) e a aba do turno (Matutino, Vespertino, Noturno).
 2. Clique nas células da grade. Cada clique muda o estado: Disponível (verde) → Bloqueado (vermelho) → Hora-Atividade obrigatória (amarelo) → HA fixa (o motor não move) → volta para Disponível.
 3. Clique em "Salvar" (ou "Desfazer" para descartar). Repita para cada turno em que o professor trabalha.
 - Se o horário já tem aula real e você bloqueia, o sistema avisa que isso vai gerar conflito "professor indisponível".
 - Se aparecer "Nenhum esquema de horário configurado para o turno", configure antes em Calendário e Turnos → Esquema de aulas por turno.
-- HA* = hora-atividade em contraturno (num turno em que o professor não tem aula). Aparece assim na Grade, na Minha Agenda, no perfil e nos PDFs.
+- HA* = hora-atividade em contraturno (num turno em que o professor não tem aula) ou referente a aulas de outro turno (ex.: HA das aulas da tarde cumprida de manhã). Aparece assim na Grade, na Minha Agenda, no perfil e nos PDFs.
+- Quantidade de HA: a tabela oficial da SEED-PR é consultada com as aulas de CADA turno, e não com o total da escola. Ex.: 14 aulas de manhã (4 HA) + 8 à tarde (2 HA) = 6 HA.
 
-FIXAR UMA AULA (o CP-SAT mantém a aula naquele horário)
+PELA GRADE DO PROFESSOR (atalho para trocas do dia a dia)
+Em Horário → Grade, filtre um professor e clique num horário vazio ou numa HA: abre um menu com Marcar HA, Tirar HA, Bloquear horário e Liberar horário. Grava na mesma Disponibilidade. HA fixa e abono do probatório (com cadeado 🔒) só mudam aqui na tela Disponibilidade.
 
+FIXAR UMA AULA (a geração mantém a aula naquele horário)
 1. Ligue "Modo fixar aula".
 2. Clique na célula, escolha a turma e a disciplina e confirme.
 3. Para soltar, clique de novo na célula com o modo ligado (ou use o botão de soltar na lista de aulas fixas).
 
 Depois de mudar a disponibilidade de alguém com grade pronta, use Professores → (professor) → "Corrigir Conflitos (recomendado)".
 
----
-
 ## 8. Salas e espaços
 
 Menu Salas → "Nova Sala".
-
 1. Informe Nome da Sala (ex.: Sala 12) e Capacidade.
 2. Em Tipo, escolha: Sala de aula, Laboratório, Laboratório de Informática, Quadra poliesportiva, Auditório, Biblioteca, Sala de arte — ou "Outro tipo (digitar)..." (ex.: Sala Maker, Ateliê).
 3. Salve. Para editar ou remover, use os botões da sala na lista.
 Os espaços cadastrados aqui são os que aparecem em Reservas.
 
----
-
 ## 9. Regras de Distribuição (limites usados na geração)
 
 Menu Regras de Distribuição — mostra como o gerador aplica cada regra, em camadas.
-
-- "Máximo de aulas geminadas (padrão da escola)": vale para toda disciplina/turma sem limite próprio. Ajuste e clique em Salvar.
+- "Máximo de aulas geminadas (padrão da rede)": 3, igual em todas as escolas (regra travada, a escola não altera). Vale para toda disciplina/turma sem limite próprio.
 - Por turma/disciplina: defina o "máx. geminadas/dia" de cada disciplina.
 - Por professor: "Adicionar regra" → Professor, Turma (opcional — vazio vale para qualquer turma) e Máx./dia.
 - Trio, co-docência e aulas assíncronas não ficam aqui: configure em Turmas → editar a turma.
-- Os parâmetros da Resolução SEED 7.200/2025 (regência, HA, tetos por turno) ficam em Escola → Configurações → Conformidade SEED-PR.
+- Os parâmetros da Resolução SEED 7.200/2025 (regência, HA, tetos por turno) aparecem em Escola → Configurações → Conformidade SEED-PR, só para consulta: são regras da rede, iguais em todas as escolas.
 
----
+## 10. Gerar a grade horária (Turma, Turno parcial, Turno inteiro, Modo Experimental e promover)
 
-## 10. Gerar a grade horária (CP-SAT, Modo Experimental e promover para oficial)
+A grade é gerada no menu Horário → aba Modo Experimental. Toda geração vira um EXPERIMENTO: nada muda na grade oficial até você clicar em "Promover para oficial".
 
-A grade é gerada no menu Horário → aba Modo Experimental. Nada muda na grade oficial até você clicar em "Promover para oficial".
+QUAL BOTÃO USAR (Turma, Turno parcial ou Turno inteiro)
+O NexGrade recalcula só as turmas escolhidas. As aulas das outras turmas ficam paradas e contam como horário ocupado para os professores delas (ninguém fica em dois lugares). Ao promover, só as turmas do experimento são trocadas.
+- Turma: corrige 1 ou poucas turmas sem mexer nas outras. Use quando abriu uma turma nova, mudou o professor ou a carga de uma disciplina, ou uma turma ficou com aula vaga ou conflito.
+- Turno parcial: refaz um grupo de turmas do mesmo turno. Use quando a mudança atinge várias turmas (ex.: todos os 6º anos, porque o professor que circula entre eles mudou; só o Fundamental da manhã) ou para dividir um turno muito grande que demora a gerar.
+- Turno inteiro: reorganiza o turno todo. Use no início do ano ou numa reorganização grande. É o que dá menos janelas, mas é o que mais muda a vida de alunos e professores.
+- Regra prática: quanto menor a parte gerada, menos coisa muda e menos o sistema consegue melhorar. No meio do ano (grade já no RCO e passada às famílias), prefira Turma ou Turno parcial; o Turno inteiro fica para o planejamento do ano.
 
-GERAR COM O MOTOR CP-SAT (preciso, recomendado)
+PASSO A PASSO
+1. Clique em Turma, Turno parcial ou Turno inteiro.
+2. À esquerda: nome do experimento (já vem preenchido, ex.: Grade-vespertino-2026-10-16-14h10), o turno ou as turmas e, no turno inteiro, o "Tempo limite (segundos)" (padrão 120; turnos grandes podem precisar de 300 a 600).
+3. À direita, no turno inteiro: o aviso de hora-atividade DO TURNO ESCOLHIDO. Em cinza ("parte da HA em outro turno (HA*) -- sem problema"): a HA que não cabe no turno vai para o outro turno. Em vermelho ("com HA faltando"): o professor não tem horário disponível em nenhum turno; resolve liberando horários na Disponibilidade.
+4. Clique em "Gerar grade". O andamento aparece à direita: lendo dados, ligando o servidor de cálculo (se estava desligado, leva 1 a 2 minutos), calculando (com as janelas da melhor grade encontrada caindo ao vivo) e salvando.
+5. Durante o cálculo:
+   - "Parar e usar a melhor até agora": interrompe e salva a melhor grade encontrada até ali (fica disponível depois da primeira grade encontrada).
+   - "Cancelar sem salvar": interrompe e não salva nada.
+6. Se a página recarregar no meio, a geração continua de onde parou.
+- "Melhorar grade oficial" (turno inteiro): parte da grade oficial e tenta reduzir janelas trocando aulas de lugar. O resultado também vira um experimento.
 
-1. Em "Motor CP-SAT", escolha o alcance:
-   - Turma: uma turma só.
-   - Turno Parcial: escolha o turno e marque só algumas turmas (útil para dividir turnos grandes; as turmas de fora não mudam).
-   - Turno inteiro: todas as turmas do turno.
-
-2. Dê um nome ao experimento (ex.: CPSAT-Turno-2026-10-04). No turno inteiro dá para ajustar o "Tempo limite (segundos)" — padrão 120s; turnos grandes podem precisar de 300–600s.
-3. Aguarde. Se a página recarregar no meio, a geração continua de onde parou.
-4. Confira o resultado: turmas com aviso (disciplina não alocada por completo) aparecem listadas.
-- "Melhorar grade oficial": parte da grade oficial do turno e tenta reduzir janelas trocando aulas de lugar — nunca fica pior que a oficial. O resultado também vira um experimento.
-
-**CONFERIR E PROMOVER**
-
+CONFERIR E PROMOVER
 - Em cada experimento: veja a grade por turma, baixe "PDF por turma" ou "PDF por professor".
-- "Promover para oficial" substitui o horário atual das turmas envolvidas (pede confirmação).
-- Remova experimentos que não for usar.
+- "Simular promoção": sem gravar nada, compara as janelas dos professores (aula + HA + atividade fora de sala) de como a grade ficaria depois de promover com a oficial como está hoje, e diz se vale promover. Mostra também quais aulas mudam de lugar (professor, turma, disciplina, de onde sai e para onde vai) e a HA que muda de cada professor. Use sempre antes de promover.
+- "Promover para oficial" substitui o horário das turmas do experimento (pede confirmação) e recalcula a HA desses professores. HA marcada à mão (HA manual, HA fixa, probatório) é mantida.
+- Apague os experimentos que não for usar.
 
-**OUTROS CAMINHOS**
+REGRAS DA HORA-ATIVIDADE AO PROMOVER
+- Quantidade pela tabela SEED-PR com as aulas de cada turno.
+- No máximo 3 HA por dia em cada turno (4 só como exceção, quando não há outra saída); até 2 seguidas, a não ser que seja a única opção do turno.
+- HA de aula do diurno nunca vai para a noite. O que não couber aparece em Conflitos como HA insuficiente.
 
-- Turmas → botão Horário da turma → "Gerar via CP-SAT" (mesmo motor, uma turma, vai para o Modo Experimental).
+OUTROS CAMINHOS
+- Turmas → botão Horário da turma → "Gerar grade" (uma turma, vai para o Modo Experimental).
 - Professores → (professor) → "Regenerar Horário (prévia)" (só as turmas daquele professor).
-- Gerador simples / motor heurístico: só para emergência, se o CP-SAT estiver fora do ar. Ele NÃO respeita aulas fixas, HA fixa, trio, aulas assíncronas nem a reserva de HA, e o "Gerar Grade (simples)" da aba Grade substitui a grade OFICIAL da turma direto.
+- "Mostrar gerador simples (emergência)": só se a geração normal estiver fora do ar. Ele NÃO respeita aulas fixas, HA fixa, trio, aulas assíncronas nem a reserva de HA, e o "Gerar Grade (simples)" da aba Grade substitui a grade OFICIAL da turma direto.
 
 O Assistente de IA não gera grade — ele só explica o caminho.
 
----
-
-## 11. Grade oficial e Conflitos (ver, filtrar, aula manual)
+## 11. Grade oficial e Conflitos (ver, filtrar, aula manual, HA e bloqueios pela grade)
 
 Menu Horário → aba Grade.
-
-- Filtre por Turno, por Turma ou por Professor (botão "Limpar" volta ao início). Selecione uma turma, um professor ou um turno para ver a grade.
+- Filtre por Turno (Matutino, Vespertino, Noturno ou Integral), por Turma ou por Professor (botão "Limpar" volta ao início). Selecione uma turma, um professor ou um turno para ver a grade.
+- Turma integral: a grade mostra todas as aulas do esquema Integral (ex.: 11), com a hora de cada linha, mesmo vazias.
+- Na grade do PROFESSOR, a aula da turma integral aparece no turno real (manhã ou tarde) e na linha correspondente; por isso a hora pode diferir um pouco da grade da turma (ex.: 15:00 no integral = 3ª aula da tarde, 14:45).
+- Trio: a célula mostra a disciplina do professor presencial da semana, os 3 professores e o selo "PRESENCIAL"; clicando aparecem as 3 disciplinas.
+- Professor com aula ou HA em mais de um turno, com o filtro em "Todos os turnos": aparece um quadro por turno, lado a lado, com o horário de cada aula e o total de aulas e HA do turno. Para ver só um, escolha o turno no filtro.
+- Na grade do professor: Livre (contorno verde) = horário disponível sem aula nem HA; Indisp. (cinza) = bloqueio do professor; "indisp." embaixo do dia = turno inteiro bloqueado naquele dia; HA/HA* em amarelo; atividades fora de sala (FORM, COORD...) em cinza com o nome.
+- Trocar HA ou bloqueio pela grade do professor: clique num Livre, Indisp. ou HA e escolha Marcar HA, Tirar HA, Bloquear horário ou Liberar horário. Para mudar uma HA de lugar: "Tirar HA" na antiga e "Marcar HA" na nova. Grava na Disponibilidade (HA marcada aqui é HA manual: a promoção de grade não mexe nela). HA fixa e probatório (🔒) só na tela Disponibilidade.
 - Clique numa aula para ver os detalhes, editar ou excluir (a exclusão pede confirmação e não pode ser desfeita).
 - "Adicionar aula manual": escolha Turma, Disciplina, Dia da semana, Número da aula e Professor (titular). Para co-docência, ligue "Aula com dois professores" e escolha o Professor de apoio. Grava direto na grade oficial; se já houver aula naquele horário para a turma, a inclusão é bloqueada.
+  - Disciplina tem busca (digite parte do nome); as da turma aparecem primeiro, com o professor do vínculo. Disciplina cadastrada duas vezes aparece uma vez só; mesmo nome com código diferente mostra o SAE ao lado.
+  - Depois de escolher a disciplina, o Professor mostra só os aptos (vínculo da turma ou habilitados na disciplina em Professores). "Mostrar todos" libera a lista inteira; sem nenhum apto, a lista vem completa com um aviso.
+  - Aceita até a 12ª aula (turma integral).
 - Com uma turma selecionada, também dá para clicar numa célula vazia para adicionar aula ali.
 - Gestor de reservas vê a grade em modo consulta (sem alterar).
 
 Aba Conflitos:
-
-- Mostra Total de conflitos, Críticos e Alta prioridade, com gravidade (Crítico, Alto, Médio, Baixo) e "Sugestões de resolução".
-- "Reanalisar" recalcula; "Ver disponibilidade" leva ao professor envolvido.
+- Quadros Total, Críticos, Alta prioridade, Média e Baixa: clique num quadro para ver só aqueles conflitos; clique de novo (ou em Total) para ver todos.
+- Botões por tipo (ex.: "HA Insuficiente (3)", "Janelas Excessivas (1)"): mostram só aquele tipo; dá para combinar com a gravidade.
+- Cada conflito tem "Ver sugestões" e "Ver disponibilidade" (leva ao professor). "Reanalisar" recalcula.
 - Para conflito de professor indisponível, o caminho mais seguro é Professores → (professor) → "Corrigir Conflitos (recomendado)".
-
----
 
 ## 12. Reservas de salas e espaços
 
 Menu Reservas (agenda do dia, com "Hoje" e navegação por data). Cartões: Reservas do dia, Confirmadas, Pendentes e Salas ocupadas.
 
-**NOVA RESERVA**
-
+NOVA RESERVA
 1. Clique em "Nova reserva".
 2. Preencha: Data da reserva (segunda a sexta), Aula/horário, Espaço compartilhado, Professor responsável, Objetivo da reserva e Observações (opcional).
 3. Salve. O NexGrade verifica se o espaço está livre e o limite semanal do professor antes de registrar. Se houver conflito de espaço ou limite, a reserva não é registrada.
 
-**PENDENTES**
-
+PENDENTES
 - Quando um espaço tem mais de uma solicitação na mesma aula, resolva antes de confirmar. Use "Confirmar" na reserva escolhida. Também dá para editar ou excluir (com confirmação).
 
 REGRAS POR PROFESSOR (botão "Regras por professor" — só direção/coordenação)
-
 - Limite semanal de reservas e Prioridade na fila (1 a 5; a 5 é atendida antes quando o mesmo espaço é disputado).
 - O contador considera reservas pendentes e confirmadas da semana atual. O limite vale para todos, inclusive prioridade máxima.
 
-**QUEM FAZ O QUÊ**
-
+QUEM FAZ O QUÊ
 - Gestor de reservas: cria, confirma e exclui reservas; não altera as regras por professor nem a grade.
 - Professor: pede reserva pela Minha Agenda ("Nova reserva"), vendo as aulas livres do espaço na data.
 - Relatório: Exportar Dados → Relatório de Reservas (PDF ou Excel, por professor, incluindo canceladas).
 
----
-
 ## 13. Licenças e afastamentos
 
 Menu Licenças → "Nova Licença".
-
 1. Escolha o Professor e informe o Tipo de licença (ex.: Licença médica), Data de início e Data de fim.
 2. Observações é opcional. Salve.
 - A lista tem busca por nome do professor; o botão de remover pede confirmação.
 - Licenças ativas aparecem contadas na Visão Geral.
 - Para achar quem pode cobrir as aulas, pergunte ao Assistente "quem está livre na Xª aula de [dia] [turno]?".
 
----
-
 ## 14. Comunicados
 
 Menu Comunicados → "Novo Comunicado".
-
 1. Informe Título (ex.: Reunião de pais) e Mensagem.
 2. Envie. O comunicado aparece na lista (com busca por título) e conta em "Comunicados Não Lidos" na Visão Geral.
 - Para apagar, use o botão de remover (pede confirmação).
 
----
-
 ## 15. Importar Dados (CSV)
 
 Menu Importar Dados (Importação Inteligente) — professores, turmas e disciplinas via CSV.
-
 1. Em "Tipo de dado", escolha Professores, Turmas ou Disciplinas.
 2. Baixe o "Modelo" CSV. Colunas: Professores = nome;email;cpf;matricula;cargaHorariaTotal | Turmas = nome;serie;turno;anoLetivo | Disciplinas = nome;cargaSemanal;cor.
 3. Preencha no Excel e salve como CSV (separador ponto-e-vírgula; primeira linha é o cabeçalho; UTF-8 com ou sem BOM).
@@ -300,75 +286,112 @@ Menu Importar Dados (Importação Inteligente) — professores, turmas e discipl
 5. Confira a pré-visualização e confirme. Dados duplicados são ignorados automaticamente.
 Depois de importar professores, marque as disciplinas de cada um em Professores; depois de importar turmas, defina os professores em Turmas.
 
----
-
 ## 16. Exportar Dados (PDFs, planilhas e relatórios)
 
 Menu Exportar Dados. Opções:
-
 - Grade Horária: grade completa ou de uma turma, em CSV (Excel) ou JSON.
 - Controle de Ponto: planilha com a carga horária dos professores (filtro de professor, mês e ano).
-- Grade em PDF: pronta para impressão. Escolha Visão (Por Turma ou Por Professor), Turno e Semana (atual ou que vem). HA em contraturno aparece como HA*.
+- Ponto Diário: folha de ponto de UM dia. Escolha o dia e o turno (Manhã, Tarde, Noite ou Todos, um por página) e baixe em PDF ou Excel. Uma linha por professor que tem aula, hora-atividade (H.A.) ou atividade (FORM, COORD, ASS...) nesse dia, uma coluna por aula do turno com TURMA/SIGLA, e a coluna Situação com quadradinhos para marcar: Presente, Falta, Atestado ou Atraso. Traço = professor sem expediente nesse horário. Se o dia for feriado ou recesso no calendário, o relatório avisa no topo.
+- Grade em PDF: pronta para impressão. Escolha Visão (Por Turma ou Por Professor), Turno e Semana (atual ou que vem). HA em contraturno aparece como HA*. Turno "Integral (grade por turma)": PDF da turma integral com todas as linhas; no PDF por professor, a aula da turma integral sai na manhã/tarde dele.
 - Relatório de Reservas: por professor, num período, com confirmadas, pendentes e canceladas — PDF ou Excel.
 - Relatório de Carga Horária: PDF por professor com total de aulas, HA institucional e turmas/disciplinas por período (é o resumo, não a grade dia a dia).
 - Carga Horária Cumprida × Exigida: PDF por turma com o cumprido no ano x o total exigido, para ver antes se alguma disciplina vai fechar o ano devendo aula.
-- Relatório SEED: arquivo exportado pelo sistema. Atenção: ainda NÃO é integração com o RCO — o lançamento no RCO continua manual.
+- Exportar para o RCO (XML) e Script de gravação no RCO: veja o capítulo "Gravar a grade no RCO (arquivo XML e script de gravação)" (passo a passo completo).
 
----
+## 17. Gravar a grade no RCO (arquivo XML e script de gravação)
 
-## 17. Escola (dados, configurações, conformidade SEED-PR e assinatura)
+Menu Exportar Dados → cartão "Exportar para o RCO (XML)". Só direção, coordenação e secretaria, por turno (Matutino, Vespertino, Noturno, Integral).
+- Arquivo XML: todas as turmas do turno de uma vez, importadas no RCO em Grade de Horário → Incluir via Arquivo. O arquivo do RCO aceita uma disciplina por horário.
+- Turmas com trio, dupla ou disciplinas diferentes com o mesmo código: o NexGrade grava no próprio RCO, turma por turma, com prévia antes de gravar. O sistema avisa quais turmas precisam dessa gravação.
+- Ordem: primeiro o arquivo com todas as turmas, depois a gravação das turmas com trio.
+- O passo a passo detalhado está no manual entregue à escola e no Assistente de IA dentro do sistema.
+
+## 18. Arquivo do RCO (enviar à equipe NexGrade o cadastro oficial da escola)
+
+Menu Relatórios e RCO → Arquivo do RCO. Quando a equipe NexGrade pede, o item do menu aparece com o selo amarelo "Pedido" e a tela mostra a mensagem.
+1. No RCO: Grade de Horário, escolha o Período Letivo atual e use a opção de exportar da tela — o RCO baixa um arquivo .XML (cadastro oficial: disciplinas com Código Externo, turmas com código SERE e a matriz de cada turma). Se não encontrar a opção, fale com a equipe NexGrade.
+2. No NexGrade: "Escolher o arquivo .XML e enviar". O sistema confere se é o arquivo certo e mostra o resumo (turmas por turno, disciplinas, linhas de grade). O selo "Pedido" some.
+- Enviar NÃO muda nada no cadastro nem na grade: o arquivo fica guardado para a equipe NexGrade conferir códigos e cargas. Um envio novo substitui o anterior.
+- Só direção, coordenação e secretaria enviam e baixam o arquivo.
+
+## 19. Códigos do RCO (SERE das turmas e Código Externo das disciplinas)
+
+Menu Relatórios e RCO → Códigos do RCO. Só direção, coordenação e secretaria.
+- Turmas: código da turma no SERE (o RCO recusa sem ele). 3º ano com duas turmas no RCO: código FGB (formação geral) e código da parte IF; cada disciplina vai para a parte certa automaticamente.
+- Disciplinas: Código Externo do RCO (é o que o RCO usa; não é o SAE). Disciplina própria da turma também precisa (ex.: Prática de Formação = 1269 nas duas turmas).
+- Os códigos SERE das turmas mudam todo ano: confira no começo do ano (o arquivo do RCO, em Arquivo do RCO, traz todos).
+
+## 20. Escola (dados, configurações, conformidade SEED-PR e assinatura)
 
 Menu Escola. Três abas:
-
 - Dados da Escola: Nome, CNPJ, Cidade, Estado, Modalidade, e-mail e WhatsApp de contato; Identificação oficial (Código INEP, NRE); Turnos ofertados; Resolução SEED-PR. Usados nos relatórios, na grade e na cobrança.
-- Configurações: padrões de geração (Aulas por dia, Reduzir janelas automaticamente, Fator pedagógico) e formato do relatório SEED. O link "Conformidade SEED-PR → Configurar" abre os parâmetros da Resolução SEED 7.200/2025 (Art. 11): aulas de regência e horas-atividade para 20h e 40h, teto de aulas por turno (noite e demais turnos), até quantas aulas a HA fica no mesmo turno e máximo de geminadas. Ficam editáveis porque a proporção hora-aula/hora-atividade pode mudar.
+- Configurações: padrões de geração (Aulas por dia, Reduzir janelas automaticamente, Fator pedagógico) e formato do relatório SEED. O link "Conformidade SEED-PR → Configurar" abre os parâmetros da Resolução SEED 7.200/2025 (Art. 11): aulas de regência e horas-atividade para 20h e 40h, teto de aulas por turno (noite e demais turnos), até quantas aulas a HA fica no mesmo turno e máximo de geminadas. São regras padrão da rede, iguais em todas as escolas (referência: Romário) e travadas: a escola só consulta; mudança (por exemplo, se a SEED mudar a proporção hora-aula/hora-atividade) é feita pela administração da plataforma e vale para todas.
 - Assinatura: plano atual ("Ver planos") e contato de cobrança (e-mail e WhatsApp usados para boleto/PIX), que pode ser diferente do contato geral.
 
----
+## 21. Usuários e cargos (quem acessa o sistema)
 
-## 18. Usuários e cargos (quem acessa o sistema)
-
-Menu Usuários — quem tem acesso nesta escola e com qual cargo.
-
+Menu Usuários — quem da equipe tem acesso nesta escola e com qual cargo. Não há limite de pessoas.
 1. Clique em "Novo Usuário".
-2. Informe Nome, E-mail e Cargo e envie. A pessoa recebe um convite por e-mail e entra já com o cargo escolhido. Enquanto não aceitar, aparece "Convite pendente".
+2. Informe Nome, E-mail e Cargo e clique em "Liberar acesso". Não sai e-mail de convite: avise a pessoa para entrar no endereço do sistema e criar a conta com esse mesmo e-mail (ou entrar, se já tiver conta). Até o primeiro acesso aparece "Ainda não entrou".
 Cargos:
+- Direção, Coordenação e Secretaria: acesso total (a secretaria costuma montar e gerar a grade).
+- Gestor de reservas: só a agenda de reservas (sem regras por professor; vê a grade e o calendário só para consulta).
+- Professor NÃO é cadastrado aqui: o acesso dele vem do e-mail em Professores (cargo Professor, só a Minha Agenda). Quem é da equipe e também professor fica com o cargo da equipe.
+- Para mudar o cargo, troque na lista (pede confirmação). Para tirar o acesso, use a lixeira (vale em até 1 minuto). Ninguém remove o próprio acesso, e a escola sempre fica com pelo menos uma pessoa de acesso total.
+- Acesso "Nexus Core (suporte)": aparece quando o suporte da Nexus Core foi liberado para ajudar a escola; a escola pode remover quando quiser. Tudo o que o suporte fizer fica no Histórico.
 
-- Direção e Coordenação: acesso total.
-- Gestor de reservas: só a agenda de reservas (sem regras por professor; vê a grade só para consulta).
-- Professor: só a Minha Agenda.
-- Para mudar o cargo, troque na lista (pede confirmação). O professor também pode ser convidado pela tela Professores ("Convidar para o portal do professor").
+## 22. Entrar no sistema, trocar de escola e sair
 
----
+- Entrar: com o e-mail e a senha da conta. Primeira vez: "Criar conta" com o e-mail que a escola cadastrou (o sistema envia um código para confirmar o e-mail). Esqueceu a senha: use o link de recuperar a senha na tela de entrada.
+- O cargo e a escola vêm do cadastro da escola: equipe pela tela Usuários; professores pelo e-mail em Professores.
+- Quem trabalha em mais de uma escola troca no seletor no topo da tela (nome da escola · cargo).
+- "Seu e-mail ainda não foi liberado": o e-mail da conta não está cadastrado em nenhuma escola (ou está diferente). Peça à secretaria para conferir em Usuários ou em Professores; depois de cadastrado, vale em até 1 minuto.
+- Sair: botão "Sair" no topo, em todos os cargos.
 
-## 19. Histórico de alterações (auditoria)
+## 23. Virada do ano letivo (preparar a escola para o ano seguinte)
+
+Menu Configurações → Virada do ano. Só direção, coordenação e secretaria.
+- Fica liberada a partir do fim do 3º trimestre do calendário da escola (antes disso, só se a Nexus Core liberar). Até lá dá para abrir a tela, conferir e planejar.
+- As turmas CONTINUAM (mesma série, turno, disciplinas, cargas e professores) e passam para o ano novo: a turma é a vaga na grade, não o grupo de alunos. Ajuste só o que mudou:
+  1. Baixe os PDFs da grade do ano que termina (por turma e por professor).
+  2. Turmas: lixeira = a turma fecha; botão de copiar = abre mais uma turma da mesma série (mesmas disciplinas e cargas, sem professor). Dá para trocar o nome.
+  3. Professores: todos continuam; desmarque quem saiu (fica inativo, não é excluído, e sai das disciplinas).
+  4. Digite "VIRAR" e o ano (ex.: VIRAR 2027) e clique em Virar.
+- Na virada são zerados: grade oficial, experimentos, disponibilidade (bloqueios e HA) e códigos SERE das turmas. Tudo fica guardado e as reservas já feitas continuam.
+- "Desfazer virada" volta tudo como estava, enquanto não houver grade oficial do ano novo.
+- Depois: calendário do ano novo, cadastrar professores novos, escolher professor nas disciplinas vazias (Turmas → Sem professor), lançar a disponibilidade, códigos do RCO e gerar a grade no Modo Experimental.
+
+ROTEIRO DO COMEÇO DO ANO (depois que a SEED cria as turmas no SERE/RCO)
+1. Virada do ano (acima).
+2. Arquivo do RCO: a secretaria baixa no RCO e envia (os códigos SERE das turmas mudam todo ano).
+3. Códigos do RCO: atualizar o código SERE de cada turma (e da parte IF) e o Código Externo das disciplinas novas.
+4. Conferir as disciplinas e cargas de cada turma com a matriz oficial.
+5. Esquemas de aula (inclusive Integral), professores, vínculos, disponibilidade e aulas fixas (trios, assíncronas, Prática).
+6. Gerar no Modo Experimental, resolver Conflitos, conferir os PDFs e promover.
+7. Gravar no RCO por turno: XML com todas as turmas e depois o script só das turmas com trio (capítulo "Gravar a grade no RCO (arquivo XML e script de gravação)").
+8. Durante o ano: mudou aula, corrigir no NexGrade e rodar o script só das turmas que mudaram.
+
+## 24. Histórico de alterações (auditoria)
 
 Menu Histórico — auditoria das ações feitas no sistema: o que foi feito (criação, alteração, exclusão), em qual cadastro, por quem e quando.
-
 - Use "Filtrar entidade" para ver só um tipo de dado (ex.: disponibilidade, horários).
 - Ações confirmadas pelo Assistente de IA aparecem como "Assistente de IA (confirmado pelo usuário)".
 
----
-
-## 20. Minha Agenda (portal do professor)
+## 25. Minha Agenda (portal do professor)
 
 É o que o professor vê ao entrar com o e-mail cadastrado (cargo Professor).
-
 - Grade de aulas por turno (abas Manhã, Tarde, Noite), com HA/HA* e aulas assíncronas marcadas; no celular mostra um dia por vez.
 - "Baixar PDF" da própria grade; "Instalar app" para usar como aplicativo no celular.
-- Calendário escolar com os próximos eventos.
+- "Próximas datas do calendário da escola" sempre visível no topo (feriados, recessos, início/fim de trimestre; dias seguidos aparecem juntos, ex.: recesso de 13/07 a 22/07). O botão "Ocultar calendário" esconde.
+- Na grade, cada dia mostra a data da semana; dia de feriado ou recesso aparece com a etiqueta "Feriado: sem aula" (ou Recesso) e as aulas do dia ficam apagadas. No celular, o dia mostra ✕ e um aviso.
 - Reservas: "Nova reserva" → escolha o Espaço e a Data, clique numa aula livre, informe o objetivo e reserve. "Minhas reservas" lista as ativas.
-- Se aparecer "Nenhum professor vinculado", o e-mail da conta não bate com o e-mail do cadastro em Professores — a coordenação precisa conferir.
+- Se aparecer "Nenhum professor vinculado" ou "Seu e-mail ainda não foi liberado", o e-mail da conta não bate com o e-mail do cadastro em Professores — a secretaria ou a coordenação precisa conferir.
 
----
-
-## 21. Assistente de IA (o que ele faz)
+## 26. Assistente de IA (o que ele faz)
 
 O Assistente de IA (menu Assistente de IA) responde com os dados reais da escola:
-
 - Grade de um professor (com HA/HA*) ou de uma turma; quem está livre num dia/aula/turno; reservas e limite semanal; janelas de professores, turmas sem horário e distribuição semanal.
 - Passo a passo de qualquer tela do NexGrade.
 - Pode propor marcar um professor como disponível/indisponível num horário — sempre pede confirmação antes de gravar e não altera hora-atividade.
-- Não gera nem altera a grade; explica o caminho pelo CP-SAT.
-- Disponível para direção e coordenação.
-
+- Não gera nem altera a grade; explica o caminho pela geração de grade (Modo Experimental).
+- Disponível para direção, coordenação e secretaria.

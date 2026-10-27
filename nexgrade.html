@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia</title>
-<meta name="description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<meta name="description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -14,12 +14,12 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Nexus Core Tecnologia">
 <meta property="og:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta property="og:description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<meta property="og:description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <meta property="og:url" content="https://nexuscoretecnologia.com.br/nexgrade.html">
 <meta property="og:image" content="https://nexuscoretecnologia.com.br/img/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta name="twitter:description" content="NexGrade: grade horária otimizada, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<meta name="twitter:description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
 <meta name="twitter:image" content="https://nexuscoretecnologia.com.br/img/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +51,8 @@
   .source-note { font-size: 0.8rem; color: var(--texto-tenue); margin-top: 28px; }
 
   /* Passos */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: passo; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: passo; }
+  @media (max-width: 1100px) { .steps { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
   .step { border-top: 3px solid var(--azul-claro); padding-top: 18px; }
   .step-num { font-family: var(--f-display); font-weight: 800; font-size: 1.6rem; color: var(--azul-claro); }
@@ -126,12 +127,12 @@
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Início</a> / NexGrade</div>
-      <span class="pill"><span class="status-dot pilot"></span> Piloto ativo em duas escolas estaduais</span>
+      <span class="pill"><span class="status-dot pilot"></span> Em implantação em três colégios estaduais</span>
       <h1 style="margin-top: 18px;">A plataforma que organiza a operação pedagógica do início ao fim.</h1>
       <p>
-        Grade horária otimizada, agenda do professor no celular, reserva de
-        espaços e um assistente de IA, num só sistema, feito para a realidade
-        das escolas da rede estadual do Paraná.
+        Grade horária otimizada, gravação da grade no RCO, agenda do professor
+        no celular, reserva de espaços e um assistente de IA, num só sistema,
+        feito para a realidade das escolas da rede estadual do Paraná.
       </p>
       <div class="hero-actions" style="margin-top: 30px;">
         <a href="contato.html" class="btn btn-primary">Pedir demonstração</a>
@@ -188,7 +189,7 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Como funciona</span>
-        <h2>Da escola cadastrada à grade oficial em três passos</h2>
+        <h2>Da escola cadastrada à grade no RCO em quatro passos</h2>
       </div>
       <div class="steps">
         <div class="step">
@@ -205,6 +206,11 @@
           <span class="step-num">3</span>
           <h3>Revisão antes de aplicar</h3>
           <p>A grade nova fica em modo de teste. A coordenação revisa, compara e só então aplica como oficial.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">4</span>
+          <h3>Grade gravada no RCO</h3>
+          <p>A grade oficial vai para o RCO sem redigitar aula por aula, inclusive as turmas com trio.</p>
         </div>
       </div>
     </div>
@@ -226,6 +232,7 @@
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Co-docência</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Docência por trio</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Aulas assíncronas</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Turno Integral (manhã e tarde)</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Regras de distribuição</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Geração otimizada da grade</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Redução de janelas</li>
@@ -235,6 +242,8 @@
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Visão por turno, turma e professor</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF por turma e por professor</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Exportação em PDF, Excel e CSV</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gravação da grade no RCO</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Códigos SERE e Código Externo conferidos</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Controle de ponto</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Relatório de carga horária</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Reserva de espaços</li>
@@ -242,6 +251,8 @@
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Minha Agenda no celular e no computador</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Assistente de IA no sistema</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Volta para a grade anterior</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Aula manual com professores aptos</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Virada do ano letivo com desfazer</li>
       </ul>
     </div>
   </section>
@@ -381,6 +392,38 @@
           </div>
         </div>
       </div>
+      <div class="section-block">
+        <span class="eyebrow">Novo</span>
+        <h3 class="section-block-title">Da grade pronta direto para o RCO</h3>
+        <div class="feature-grid feature-grid-3">
+          <div class="feature-item">
+            <h4>Todas as turmas de uma vez</h4>
+            <p>A grade oficial vira o arquivo que a secretaria importa no RCO, um por turno, igual ao PDF por turma. Sem redigitar aula por aula.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Turmas com trio também</h4>
+            <p>O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, o NexGrade grava no próprio RCO, turma por turma, com prévia. O sistema avisa quais turmas precisam.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Turno Integral</h4>
+            <p>Turmas de manhã e tarde, como a Formação de Docentes, com os horários iguais aos do RCO e sem choque de professor entre os turnos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-block">
+        <span class="eyebrow">Começo do ano</span>
+        <h3 class="section-block-title">O ano letivo novo sem começar do zero</h3>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h4>Virada do ano com desfazer</h4>
+            <p>Turmas e professores passam para o ano novo. Tudo fica guardado, e um botão desfaz a virada enquanto a grade nova não for oficial.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Cadastro oficial do RCO</h4>
+            <p>A escola envia o arquivo do RCO e os códigos SERE do ano e as matrizes são conferidos antes de gerar, sem digitar código à mão.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -422,9 +465,11 @@
         <details><summary>Como a hora-atividade é calculada?</summary><p>Pela tabela oficial da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar.</p></details>
         <details><summary>A grade nova substitui a atual automaticamente?</summary><p>Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior.</p></details>
         <details><summary>O que é uma janela na agenda do professor?</summary><p>É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola.</p></details>
+        <details><summary>O NexGrade lança a grade no RCO?</summary><p>Sim. A grade oficial vai para o RCO sem redigitar: todas as turmas pelo arquivo de importação do RCO e as turmas com trio gravadas direto no RCO, turma por turma, com prévia antes de gravar.</p></details>
+        <details><summary>Funciona com turma de período integral?</summary><p>Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário.</p></details>
         <details><summary>Os professores precisam instalar algum aplicativo?</summary><p>Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps.</p></details>
         <details><summary>Os dados de uma escola ficam visíveis para outra?</summary><p>Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição.</p></details>
-        <details><summary>Quanto tempo leva para começar?</summary><p>Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas e o assistente de IA ficam prontos em dias, com a coordenação revisando cada passo.</p></details>
+        <details><summary>Quanto tempo leva para começar?</summary><p>Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e a gravação no RCO ficam prontos em dias, com a coordenação revisando cada passo.</p></details>
       </div>
     </div>
   </section>
