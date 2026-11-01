@@ -59,15 +59,21 @@
   .step h3 { font-size: 1.1rem; margin: 6px 0 8px; }
   .step p { font-size: 0.93rem; }
 
-  /* Galeria de telas */
-  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
+  /* Topo: texto a esquerda, notebook com a grade e celulares a direita */
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: center; }
+  .hero-grid .hero-img { display: block; width: 100%; height: auto; }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .hero-grid .hero-img { max-width: 620px; margin: 0 auto; } }
+
+  /* Galeria de telas: 3 por linha (9 telas = 3 linhas completas) */
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 22px; }
+  @media (max-width: 1000px) { .shots { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 760px) { .shots { grid-template-columns: 1fr; } }
   .shots-phone { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 760px) { .shots-phone { grid-template-columns: 1fr; } }
   .shot { margin: 0; }
   .shot button { display: block; width: 100%; padding: 0; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #f5f7fa; cursor: zoom-in; overflow: hidden; }
   .shot button:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; }
-  .shot img { display: block; width: 100%; height: 260px; object-fit: cover; object-position: top left; }
+  .shot img { display: block; width: 100%; height: 210px; object-fit: cover; object-position: top left; }
   .shots-phone .shot img { height: 420px; object-position: top center; }
   .shot figcaption { margin-top: 12px; }
   .shot figcaption strong { display: block; color: var(--texto); font-size: 0.98rem; margin-bottom: 4px; }
@@ -93,8 +99,10 @@
   .check-list svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--azul-claro); margin-top: 1px; }
   .section-alt .shot button { background: #f5f7fa; }
 
-  /* FAQ */
-  .faq { max-width: 760px; }
+  /* FAQ: duas colunas no computador (antes ocupava so 60% da largura) */
+  .faq { column-count: 2; column-gap: 48px; }
+  .faq details { break-inside: avoid; }
+  @media (max-width: 860px) { .faq { column-count: 1; } }
   .faq details { border-bottom: 1px solid var(--border); padding: 18px 0; }
   .faq summary { cursor: pointer; font-weight: 600; color: var(--texto); font-size: 1rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
   .faq summary::-webkit-details-marker { display: none; }
@@ -125,7 +133,8 @@
 <main>
 
   <section class="page-hero">
-    <div class="container">
+    <div class="container hero-grid">
+      <div>
       <div class="breadcrumb"><a href="index.html">Início</a> / NexGrade</div>
       <img src="img/nexgrade/nexgrade-icone.webp" alt="Logo NexGrade" width="88" height="88" style="display:block; width:88px; height:88px; border-radius:20px; margin:6px 0 18px; box-shadow:0 8px 24px rgba(0,0,0,.35);">
       <span class="pill"><span class="status-dot pilot"></span> Em implantação em três colégios estaduais</span>
@@ -139,6 +148,11 @@
         <a href="https://wa.me/5541998180353?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20NexGrade." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pedir demonstração pelo WhatsApp</a>
         <a href="#resultados" class="btn btn-ghost">Ver resultados reais</a>
       </div>
+      </div>
+      <img class="hero-img" src="img/nexgrade/hero-sistema.webp"
+           srcset="img/nexgrade/hero-sistema-520.webp 520w, img/nexgrade/hero-sistema.webp 1040w"
+           sizes="(max-width: 960px) 92vw, 580px" width="1040" height="700"
+           alt="NexGrade no notebook, com a grade horária da turma, e no celular, com a Minha Agenda do professor e a reserva de espaços">
     </div>
   </section>
 
