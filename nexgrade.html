@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia</title>
-<meta name="description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<title>NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core</title>
+<meta name="description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -13,17 +13,157 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Nexus Core Tecnologia">
-<meta property="og:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta property="og:description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<meta property="og:title" content="NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core">
+<meta property="og:description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
 <meta property="og:url" content="https://nexuscoretecnologia.com.br/nexgrade.html">
 <meta property="og:image" content="https://nexuscoretecnologia.com.br/img/nexgrade/nexgrade-logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NexGrade — Gerador inteligente de horários escolares | Nexus Core Tecnologia">
-<meta name="twitter:description" content="NexGrade: grade horária otimizada, gravação da grade no RCO, agenda do professor no celular, reserva de espaços e assistente de IA, feito para as escolas da rede estadual do Paraná. 93% menos janelas na escola piloto.">
+<meta name="twitter:title" content="NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core">
+<meta name="twitter:description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
 <meta name="twitter:image" content="https://nexuscoretecnologia.com.br/img/nexgrade/nexgrade-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://nexuscoretecnologia.com.br/#empresa",
+   "name": "Nexus Core Tecnologia",
+   "url": "https://nexuscoretecnologia.com.br/",
+   "logo": "https://nexuscoretecnologia.com.br/img/logo-master.png",
+   "email": "contato@nexuscoretecnologia.com.br",
+   "telephone": "+55 41 99818-0353",
+   "taxID": "48.542.365/0001-74",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Piraquara",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55 41 99818-0353",
+    "contactType": "sales",
+    "areaServed": "BR",
+    "availableLanguage": "Portuguese"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://nexuscoretecnologia.com.br/nexgrade.html#software",
+   "name": "NexGrade",
+   "url": "https://nexuscoretecnologia.com.br/nexgrade.html",
+   "applicationCategory": "EducationalApplication",
+   "operatingSystem": "Web",
+   "inLanguage": "pt-BR",
+   "image": "https://nexuscoretecnologia.com.br/img/nexgrade/hero-sistema.webp",
+   "description": "Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.",
+   "featureList": [
+    "Geração automática da grade horária sem janelas",
+    "Hora-atividade pela tabela da SEED-PR",
+    "Gravação da grade no RCO",
+    "Minha Agenda do professor no celular",
+    "Presença dos professores",
+    "Reserva de salas e equipamentos",
+    "Relatórios em PDF e Excel",
+    "Assistente de IA para a coordenação"
+   ],
+   "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "Coordenação pedagógica e direção escolar"
+   },
+   "areaServed": {
+    "@type": "State",
+    "name": "Paraná"
+   },
+   "publisher": {
+    "@id": "https://nexuscoretecnologia.com.br/#empresa"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://nexuscoretecnologia.com.br/nexgrade.html#perguntas",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "O NexGrade já vem com as matrizes da SEED-PR?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim. O catálogo oficial vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Como a hora-atividade é calculada?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pela tabela oficial da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "A grade nova substitui a atual automaticamente?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "O que é uma janela na agenda do professor?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "O NexGrade lança a grade no RCO?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim. A grade oficial vai para o RCO sem redigitar: todas as turmas pelo arquivo de importação do RCO e as turmas com trio gravadas direto no RCO, turma por turma, com prévia antes de gravar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Funciona com turma de período integral?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Os professores precisam instalar algum aplicativo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Os dados de uma escola ficam visíveis para outra?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quanto tempo leva para começar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e a gravação no RCO ficam prontos em dias, com a coordenação revisando cada passo."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 <style>
   :root { --page-accent: var(--azul-claro); }
   .page-hero { background: linear-gradient(180deg, rgba(21,101,192,0.12), transparent); }
@@ -138,7 +278,8 @@
       <div class="breadcrumb"><a href="index.html">Início</a> / NexGrade</div>
       <img src="img/nexgrade/nexgrade-icone.webp" alt="Logo NexGrade" width="88" height="88" style="display:block; width:88px; height:88px; border-radius:20px; margin:6px 0 18px; box-shadow:0 8px 24px rgba(0,0,0,.35);">
       <span class="pill"><span class="status-dot pilot"></span> Em implantação em três colégios estaduais</span>
-      <h1 style="margin-top: 18px;">A plataforma que organiza a operação pedagógica do início ao fim.</h1>
+      <span class="eyebrow" style="margin-top: 18px;">Sistema de grade horária escolar · SEED-PR e RCO</span>
+      <h1 style="margin-top: 0;">A plataforma que organiza a operação pedagógica do início ao fim.</h1>
       <p>
         Grade horária otimizada, gravação da grade no RCO, agenda do professor
         no celular, reserva de espaços e um assistente de IA, em um só sistema,
