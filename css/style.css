@@ -684,7 +684,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 50px 0 34px;
+  padding: 50px 0 96px; /* espaco para os botoes fixos (WhatsApp e chat) nao cobrirem o rodape */
   margin-top: 40px;
 }
 
@@ -717,6 +717,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .footer-col a:hover { color: var(--azul-claro); }
+
+/* Aviso de independencia (RCO, SERE e SEED-PR sao do Governo do Parana) */
+.footer-aviso {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--texto-tenue);
+  max-width: 900px;
+  margin: 0 0 16px;
+}
 
 .footer-bottom {
   display: flex;
