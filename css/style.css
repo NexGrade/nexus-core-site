@@ -37,7 +37,7 @@
   --f-body: "Inter", sans-serif;
 
   /* Espaçamento */
-  --container: 1160px;
+  --container: 1320px; /* antes 1160px: em monitores grandes sobravam margens largas */
   --radius: 14px;
   --radius-sm: 8px;
 }
@@ -109,6 +109,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ============================================================
    Header
    ============================================================ */
+
+/* Faixa de contato acima do cabecalho (so no computador) */
+.topbar { background: var(--azul-escuro); font-size: 0.8rem; }
+.topbar .container { display: flex; justify-content: flex-end; align-items: center; gap: 24px; height: 34px; }
+.topbar a, .topbar span { color: rgba(255, 255, 255, 0.85); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.topbar a:hover { color: #fff; text-decoration: underline; }
+.topbar a:first-child { color: #fff; font-weight: 600; }
+.topbar a:first-child svg { color: #25d366; }
+@media (max-width: 860px) { .topbar { display: none; } }
 
 .site-header {
   position: sticky;
