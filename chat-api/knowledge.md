@@ -166,7 +166,7 @@ O motor testa milhares de combinações
 Um motor de otimização próprio busca a distribuição com o menor número de janelas possível, respeitando cada regra da escola.
 3
 Revisão antes de aplicar
-A grade nova fica em modo de teste. A coordenação revisa, compara e só então aplica como oficial.
+A grade nova e as mudanças do dia a dia (trocar professor, disponibilidade, trocar aulas) ficam num rascunho. A coordenação revisa, compara e só então aplica na escola.
 4
 Grade gravada no RCO
 A grade oficial vai para o RCO sem redigitar aula por aula, inclusive as turmas com trio.
@@ -186,7 +186,10 @@ Regras de distribuição
 Geração otimizada da grade
 Redução de janelas
 Hora-atividade automática
-Modo Experimental para comparar
+Modo Rascunho para testar mudanças
+Troca de professor e de aulas no rascunho
+Presença dos professores com relatório por período
+Calendário trimestral das aulas assíncronas
 Alerta de conflitos
 Visão por turno, turma e professor
 PDF por turma e por professor
@@ -217,7 +220,7 @@ Matriz, professores, co-docência, trio e aulas assíncronas na mesma janela.
 Disponibilidade dos professores
 Bloqueios, hora-atividade e aulas fixas de cada professor, com um clique por horário.
 Geração do horário
-Grade por turno, turma ou professor, com o Modo Experimental para gerar e comparar antes de aplicar.
+Grade por turno, turma ou professor, com o Modo Rascunho para testar trocas de professor, disponibilidade e aulas antes de aplicar na escola.
 PDF pronto para imprimir
 Grade por turma e por professor, no padrão que a escola já conhece, com a hora-atividade marcada.
 Reservas de espaços
