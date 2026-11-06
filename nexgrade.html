@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core</title>
-<meta name="description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
+<meta name="description" content="Sistema de grade horária escolar: grade sem janelas com hora-atividade alinhada à tabela da SEED-PR, arquivo da grade compatível com o RCO, agenda do professor no celular e reservas.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -14,12 +14,12 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Nexus Core Tecnologia">
 <meta property="og:title" content="NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core">
-<meta property="og:description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
+<meta property="og:description" content="Sistema de grade horária escolar: grade sem janelas com hora-atividade alinhada à tabela da SEED-PR, arquivo da grade compatível com o RCO, agenda do professor no celular e reservas.">
 <meta property="og:url" content="https://nexuscoretecnologia.com.br/nexgrade.html">
 <meta property="og:image" content="https://nexuscoretecnologia.com.br/img/nexgrade/nexgrade-logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NexGrade — Sistema de grade horária escolar para o Paraná | Nexus Core">
-<meta name="twitter:description" content="Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.">
+<meta name="twitter:description" content="Sistema de grade horária escolar: grade sem janelas com hora-atividade alinhada à tabela da SEED-PR, arquivo da grade compatível com o RCO, agenda do professor no celular e reservas.">
 <meta name="twitter:image" content="https://nexuscoretecnologia.com.br/img/nexgrade/nexgrade-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,11 +60,11 @@
    "operatingSystem": "Web",
    "inLanguage": "pt-BR",
    "image": "https://nexuscoretecnologia.com.br/img/nexgrade/hero-sistema.webp",
-   "description": "Sistema de grade horária escolar para a rede estadual do Paraná: grade sem janelas com a hora-atividade da SEED-PR, gravação no RCO, agenda do professor no celular e reservas.",
+   "description": "Sistema de grade horária escolar: grade sem janelas com hora-atividade alinhada à tabela da SEED-PR, arquivo da grade compatível com o RCO, agenda do professor no celular e reservas.",
    "featureList": [
     "Geração automática da grade horária sem janelas",
-    "Hora-atividade pela tabela da SEED-PR",
-    "Gravação da grade no RCO",
+    "Hora-atividade alinhada à tabela da SEED-PR",
+    "Arquivo da grade compatível com o RCO",
     "Minha Agenda do professor no celular",
     "Presença dos professores",
     "Reserva de salas e equipamentos",
@@ -92,7 +92,7 @@
      "name": "O NexGrade já vem com as matrizes da SEED-PR?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sim. O catálogo oficial vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta."
+      "text": "Sim. O catálogo de cursos conforme a SEED-PR vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta."
      }
     },
     {
@@ -100,7 +100,7 @@
      "name": "Como a hora-atividade é calculada?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Pela tabela oficial da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar."
+      "text": "Alinhada à tabela de hora-atividade da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar."
      }
     },
     {
@@ -108,7 +108,7 @@
      "name": "A grade nova substitui a atual automaticamente?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior."
+      "text": "Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela passa a valer na escola. Se algo não ficar bom, é possível voltar para a grade anterior."
      }
     },
     {
@@ -121,10 +121,10 @@
     },
     {
      "@type": "Question",
-     "name": "O NexGrade lança a grade no RCO?",
+     "name": "O NexGrade é compatível com o RCO?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sim. A grade oficial vai para o RCO sem redigitar: todas as turmas pelo arquivo de importação do RCO e as turmas com trio gravadas direto no RCO, turma por turma, com prévia antes de gravar."
+      "text": "Sim. O NexGrade gera a grade em arquivo no formato que o RCO importa, e a importação é feita pela secretaria da escola, com o próprio acesso. Turmas com trio ou dupla têm uma etapa assistida pelo suporte do NexGrade, com acompanhamento da escola."
      }
     },
     {
@@ -156,7 +156,7 @@
      "name": "Quanto tempo leva para começar?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e a gravação no RCO ficam prontos em dias, com a coordenação revisando cada passo."
+      "text": "Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e o arquivo para o RCO ficam prontos em dias, com a coordenação revisando cada passo."
      }
     }
    ]
@@ -286,12 +286,12 @@
       <div class="breadcrumb"><a href="index.html">Início</a> / NexGrade</div>
       <img src="img/nexgrade/nexgrade-icone.webp" alt="Logo NexGrade" width="88" height="88" style="display:block; width:88px; height:88px; border-radius:20px; margin:6px 0 18px; box-shadow:0 8px 24px rgba(0,0,0,.35);">
       <span class="pill"><span class="status-dot pilot"></span> Em implantação em três colégios estaduais</span>
-      <span class="eyebrow" style="margin-top: 18px;">Sistema de grade horária escolar · SEED-PR e RCO</span>
+      <span class="eyebrow" style="margin-top: 18px;">Sistema de grade horária escolar · compatível com o RCO</span>
       <h1 style="margin-top: 0;">A plataforma que organiza a operação pedagógica do início ao fim.</h1>
       <p>
-        Grade horária otimizada, gravação da grade no RCO, agenda do professor
+        Grade horária otimizada, arquivo da grade compatível com o RCO, agenda do professor
         no celular, reserva de espaços e um assistente de IA, em um só sistema,
-        feito para a realidade das escolas da rede estadual do Paraná.
+        pensado para a rotina da gestão escolar.
       </p>
       <div class="hero-actions" style="margin-top: 30px;">
         <a href="https://wa.me/5541998180353?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20NexGrade." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pedir demonstração pelo WhatsApp</a>
@@ -312,7 +312,7 @@
              srcset="img/nexgrade/banner-nexgrade-800.webp?v=4 800w, img/nexgrade/banner-nexgrade.webp?v=4 1408w"
              sizes="(max-width: 1240px) 100vw, 1200px"
              width="1408" height="768" loading="lazy"
-             alt="A transformação inteligente da sua escola. NexGrade, sistema de grade horária escolar: grade horária otimizada, gravação no RCO, agenda no celular e assistente de IA. Agendar demonstração."
+             alt="A transformação inteligente da sua escola. NexGrade, sistema de grade horária escolar: grade horária otimizada, compatível com o RCO, agenda no celular e assistente de IA. Agendar demonstração."
              style="display:block; width:100%; height:auto;">
       </a>
     </div>
@@ -328,7 +328,7 @@
           <p class="result-lead">
             Na escola piloto, mesma semana, mesmos professores e turmas: de 184
             para 12 janelas nos três turnos, sem mudar a carga horária de
-            ninguém e com a hora-atividade distribuída pela tabela oficial.
+            ninguém e com a hora-atividade distribuída conforme a tabela da SEED-PR.
           </p>
           <div class="shift-bars">
           <div class="shift-row">
@@ -364,10 +364,10 @@
         <div class="case-stats" style="grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));">
           <div><strong>0</strong><span>janelas na manhã, contando aula e hora-atividade, em duas escolas</span></div>
           <div><strong>1</strong><span>janela no turno da tarde de uma delas</span></div>
-          <div><strong>Grade oficial</strong><span>em uso pelas escolas, não só uma simulação</span></div>
+          <div><strong>Grade em uso</strong><span>nas escolas, não só uma simulação</span></div>
         </div>
       </div>
-      <p class="source-note">Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, e grades oficiais em uso em outubro de 2026, com todas as regras de cada escola respeitadas.</p>
+      <p class="source-note">Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, e grades em uso em outubro de 2026, com todas as regras de cada escola respeitadas.</p>
     </div>
   </section>
 
@@ -375,7 +375,7 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Como funciona</span>
-        <h2>Da escola cadastrada à grade no RCO em quatro passos</h2>
+        <h2>Da escola cadastrada ao arquivo para o RCO em quatro passos</h2>
       </div>
       <div class="steps">
         <div class="step">
@@ -395,8 +395,8 @@
         </div>
         <div class="step">
           <span class="step-num">4</span>
-          <h3>Grade gravada no RCO</h3>
-          <p>A grade oficial vai para o RCO sem redigitar aula por aula, inclusive as turmas com trio.</p>
+          <h3>Arquivo pronto para o RCO</h3>
+          <p>O NexGrade gera a grade no formato que o RCO importa, e a secretaria faz a importação com o próprio acesso. Sem redigitar aula por aula.</p>
         </div>
       </div>
     </div>
@@ -410,8 +410,8 @@
         <p>Da montagem da escola à agenda do professor: grade, hora-atividade, reservas e relatórios.</p>
       </div>
       <ul class="check-list">
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Catálogo oficial SEED-PR</li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendário letivo oficial</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Catálogo de cursos conforme a SEED-PR</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendário letivo da rede</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Cadastro de professores e habilitações</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Disponibilidade por professor</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Montagem de turmas pela matriz</li>
@@ -431,7 +431,7 @@
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Visão por turno, turma e professor</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF por turma e por professor</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Exportação em PDF, Excel e CSV</li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gravação da grade no RCO</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Arquivo da grade compatível com o RCO</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Códigos SERE e Código Externo conferidos</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Controle de ponto</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Relatório de carga horária</li>
@@ -464,9 +464,9 @@
         </figure>
         <figure class="shot">
           <button type="button" data-full="img/nexgrade/catalogo-seed.webp" data-caption="Catálogo SEED-PR" aria-label="Ampliar tela: Catálogo SEED-PR">
-            <img src="img/nexgrade/catalogo-seed.webp" alt="Tela do catálogo oficial de cursos da SEED-PR no NexGrade" loading="lazy">
+            <img src="img/nexgrade/catalogo-seed.webp" alt="Tela do catálogo de cursos conforme a SEED-PR no NexGrade" loading="lazy">
           </button>
-          <figcaption><strong>Catálogo SEED-PR</strong><span>Cursos oficiais com matrizes e cargas horárias. A escola só marca os cursos que oferta.</span></figcaption>
+          <figcaption><strong>Catálogo SEED-PR</strong><span>Cursos com matrizes e cargas horárias. A escola só marca os cursos que oferta.</span></figcaption>
         </figure>
         <figure class="shot">
           <button type="button" data-full="img/nexgrade/calendario.webp" data-caption="Calendário escolar" aria-label="Ampliar tela: Calendário escolar">
@@ -547,21 +547,21 @@
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Rede estadual do Paraná</span>
-        <h2>Feito para a realidade da rede pública do Paraná</h2>
+        <span class="eyebrow">Gestão escolar</span>
+        <h2>Pensado para a rotina das escolas públicas</h2>
       </div>
       <div class="section-block">
         <div class="feature-grid">
           <div class="feature-item">
-            <h4>Catálogo oficial pronto para usar</h4>
-            <p>78 cursos oficiais, com Ensino Regular e 63 técnicos, as matrizes de cada série, as disciplinas e as cargas. Toda escola já começa com o catálogo.</p>
+            <h4>Catálogo de cursos pronto para usar</h4>
+            <p>78 cursos conforme a SEED-PR, com Ensino Regular e 63 técnicos, as matrizes de cada série, as disciplinas e as cargas. Toda escola já começa com o catálogo.</p>
           </div>
           <div class="feature-item">
             <h4>Hora-atividade conforme a SEED-PR</h4>
             <p>A proporção aula/hora-atividade segue a Resolução 7.200/2025 e fica configurável, porque a regra está em discussão judicial e pode mudar.</p>
           </div>
           <div class="feature-item">
-            <h4>Calendário letivo oficial</h4>
+            <h4>Calendário letivo da rede</h4>
             <p>Trimestres, dias letivos, feriados e recessos da SEED-PR já cadastrados. A grade nasce alinhada ao calendário da rede.</p>
           </div>
           <div class="feature-item">
@@ -590,15 +590,15 @@
       </div>
       <div class="section-block">
         <span class="eyebrow">Novo</span>
-        <h3 class="section-block-title">Da grade pronta direto para o RCO</h3>
+        <h3 class="section-block-title">Da grade pronta para o arquivo do RCO</h3>
         <div class="feature-grid feature-grid-3">
           <div class="feature-item">
             <h4>Todas as turmas de uma vez</h4>
-            <p>A grade oficial vira o arquivo que a secretaria importa no RCO, um por turno, igual ao PDF por turma. Sem redigitar aula por aula.</p>
+            <p>A grade vira o arquivo que a secretaria importa no RCO, um por turno, igual ao PDF por turma. Sem redigitar aula por aula.</p>
           </div>
           <div class="feature-item">
             <h4>Turmas com trio também</h4>
-            <p>O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, o NexGrade grava no próprio RCO, turma por turma, com prévia. O sistema avisa quais turmas precisam.</p>
+            <p>O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, há uma etapa assistida pelo suporte do NexGrade, com acompanhamento da escola. O sistema avisa quais turmas precisam.</p>
           </div>
           <div class="feature-item">
             <h4>Turno Integral</h4>
@@ -612,10 +612,10 @@
         <div class="feature-grid">
           <div class="feature-item">
             <h4>Virada do ano com desfazer</h4>
-            <p>Turmas e professores passam para o ano novo. Tudo fica guardado, e um botão desfaz a virada enquanto a grade nova não for oficial.</p>
+            <p>Turmas e professores passam para o ano novo. Tudo fica guardado, e um botão desfaz a virada enquanto a grade nova não for aplicada.</p>
           </div>
           <div class="feature-item">
-            <h4>Cadastro oficial do RCO</h4>
+            <h4>Cadastro de códigos do RCO</h4>
             <p>A escola envia o arquivo do RCO e os códigos SERE do ano e as matrizes são conferidos antes de gerar, sem digitar código à mão.</p>
           </div>
         </div>
@@ -643,7 +643,7 @@
           <p>Se algo não ficar bom, é possível voltar para a grade anterior a qualquer momento.</p>
         </div>
         <div class="feature-item">
-          <h4>Relatórios para conferir e homologar</h4>
+          <h4>Relatórios para conferir e validar</h4>
           <p>Grade, controle de ponto e carga horária em PDF, Excel ou CSV.</p>
         </div>
       </div>
@@ -657,15 +657,15 @@
         <h2>Dúvidas comuns das coordenações</h2>
       </div>
       <div class="faq">
-        <details><summary>O NexGrade já vem com as matrizes da SEED-PR?</summary><p>Sim. O catálogo oficial vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta.</p></details>
-        <details><summary>Como a hora-atividade é calculada?</summary><p>Pela tabela oficial da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar.</p></details>
-        <details><summary>A grade nova substitui a atual automaticamente?</summary><p>Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela vira oficial. Se algo não ficar bom, é possível voltar para a grade anterior.</p></details>
+        <details><summary>O NexGrade já vem com as matrizes da SEED-PR?</summary><p>Sim. O catálogo de cursos conforme a SEED-PR vem pronto, com 78 cursos (Ensino Regular e 63 técnicos), as matrizes de cada série, as disciplinas e as cargas. A escola só marca os cursos que oferta.</p></details>
+        <details><summary>Como a hora-atividade é calculada?</summary><p>Alinhada à tabela de hora-atividade da SEED-PR, seguindo a Resolução 7.200/2025. A proporção fica configurável no sistema, e não fixa no código, porque essa regra está em discussão judicial e pode mudar.</p></details>
+        <details><summary>A grade nova substitui a atual automaticamente?</summary><p>Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara e decide se ela passa a valer na escola. Se algo não ficar bom, é possível voltar para a grade anterior.</p></details>
         <details><summary>O que é uma janela na agenda do professor?</summary><p>É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola.</p></details>
-        <details><summary>O NexGrade lança a grade no RCO?</summary><p>Sim. A grade oficial vai para o RCO sem redigitar: todas as turmas pelo arquivo de importação do RCO e as turmas com trio gravadas direto no RCO, turma por turma, com prévia antes de gravar.</p></details>
+        <details><summary>O NexGrade é compatível com o RCO?</summary><p>Sim. O NexGrade gera a grade em arquivo no formato que o RCO importa, e a importação é feita pela secretaria da escola, com o próprio acesso. Turmas com trio ou dupla têm uma etapa assistida pelo suporte do NexGrade, com acompanhamento da escola.</p></details>
         <details><summary>Funciona com turma de período integral?</summary><p>Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário.</p></details>
         <details><summary>Os professores precisam instalar algum aplicativo?</summary><p>Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps.</p></details>
         <details><summary>Os dados de uma escola ficam visíveis para outra?</summary><p>Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição.</p></details>
-        <details><summary>Quanto tempo leva para começar?</summary><p>Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e a gravação no RCO ficam prontos em dias, com a coordenação revisando cada passo.</p></details>
+        <details><summary>Quanto tempo leva para começar?</summary><p>Com os dados que a escola já tem hoje, a grade, a agenda do professor, as reservas, o assistente de IA e o arquivo para o RCO ficam prontos em dias, com a coordenação revisando cada passo.</p></details>
       </div>
     </div>
   </section>
@@ -715,7 +715,7 @@
         <a href="https://wa.me/5541998180353?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20NexGrade." target="_blank" rel="noopener noreferrer">WhatsApp (41) 99818-0353</a>
       </div>
     </div>
-    <p class="footer-aviso">O NexGrade é um sistema independente da Nexus Core Tecnologia, sem vínculo com a Secretaria da Educação do Paraná. RCO, SERE e SEED-PR são sistemas e marcas do Governo do Estado do Paraná, citados apenas para indicar compatibilidade.</p>
+    <p class="footer-aviso">O NexGrade é um sistema independente da Nexus Core Tecnologia, sem vínculo, parceria ou endosso da Secretaria de Estado da Educação do Paraná (SEED-PR). RCO, SERE e SEED-PR são sistemas e marcas do Governo do Estado do Paraná, citados apenas para indicar compatibilidade.</p>
     <div class="footer-bottom">
       <span>© 2026 Nexus Core Tecnologia. Todos os direitos reservados.</span>
       <span>Piraquara/PR — Brasil</span>
