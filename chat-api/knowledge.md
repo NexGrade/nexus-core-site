@@ -258,7 +258,7 @@ Da grade pronta para o arquivo do RCO
 Todas as turmas de uma vez
 A grade vira o arquivo que a secretaria importa no RCO, um por turno, igual ao PDF por turma. Sem redigitar aula por aula.
 Turmas com trio também
-O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, há uma etapa assistida pelo suporte do NexGrade, com acompanhamento da escola. O sistema avisa quais turmas precisam.
+O arquivo do RCO aceita uma disciplina por horário. Para trio, dupla e disciplinas com o mesmo código, há uma etapa a mais, feita pela secretaria com o próprio acesso e com orientação do suporte do NexGrade. O sistema avisa quais turmas precisam.
 Turno Integral
 Turmas de manhã e tarde, como a Formação de Docentes, com os horários iguais aos do RCO e sem choque de professor entre os turnos.
 Começo do ano
@@ -288,7 +288,7 @@ Não. Toda grade gerada nasce em modo de teste. A coordenação revisa, compara 
 O que é uma janela na agenda do professor?
 É o tempo vago entre duas aulas do mesmo professor no mesmo turno. O motor de otimização busca a distribuição com o menor número de janelas possível, respeitando todas as regras da escola.
 O NexGrade é compatível com o RCO?
-Sim. O NexGrade gera a grade em arquivo no formato que o RCO importa, e a importação é feita pela secretaria da escola, com o próprio acesso. Turmas com trio ou dupla têm uma etapa assistida pelo suporte do NexGrade, com acompanhamento da escola.
+Sim. O NexGrade gera a grade em arquivo no formato que o RCO importa, e a importação é feita pela secretaria da escola, com o próprio acesso. Turmas com trio ou dupla têm uma etapa a mais, feita pela secretaria com o próprio acesso e com orientação do suporte do NexGrade.
 Funciona com turma de período integral?
 Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário.
 Os professores precisam instalar algum aplicativo?
