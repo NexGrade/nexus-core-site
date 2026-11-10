@@ -166,7 +166,7 @@ O motor testa milhares de combinações
 Um motor de otimização próprio busca a distribuição com o menor número de janelas possível, respeitando cada regra da escola.
 3
 Revisão antes de aplicar
-A grade nova e as mudanças do dia a dia (trocar professor, disponibilidade, trocar aulas) ficam num rascunho. A coordenação revisa, compara e só então aplica na escola.
+A grade nova e as mudanças do dia a dia (trocar professor, disponibilidade, trocar aulas) ficam num rascunho de um turno, de algumas turmas ou da escola toda. A coordenação revisa a simulação e só então faz as mudanças valerem na escola; se houver professor em duas turmas no mesmo horário, o sistema avisa e não deixa passar.
 4
 Arquivo pronto para o RCO
 O NexGrade gera a grade no formato que o RCO importa, e a secretaria faz a importação com o próprio acesso. Sem redigitar aula por aula.
@@ -220,7 +220,7 @@ Matriz, professores, co-docência, trio e aulas assíncronas na mesma janela.
 Disponibilidade dos professores
 Bloqueios, hora-atividade e aulas fixas de cada professor, com um clique por horário.
 Geração do horário
-Grade por turno, turma ou professor, com o Modo Rascunho para testar trocas de professor, disponibilidade e aulas antes de aplicar na escola.
+Grade por turno, turma ou professor, com o Modo Rascunho para testar trocas de professor, disponibilidade e aulas antes de valerem na escola.
 PDF pronto para imprimir
 Grade por turma e por professor, no padrão que a escola já conhece, com a hora-atividade marcada.
 Reservas de espaços
