@@ -103,29 +103,35 @@ function cleanMessages(raw) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// Tenta o modelo principal (com novas tentativas em 503/429) e depois o reserva.
+// Tenta o modelo principal, depois o reserva (mais leve) e o principal de novo.
+// (09/11/2026) O principal passou a ficar sobrecarregado (503) ou a passar dos 30 s; o tempo esgotado nao era tratado
+// como falha temporaria e a pergunta morria sem tentar o reserva ("Nao consegui responder agora"). Agora cada
+// tentativa tem o proprio limite e o tempo esgotado tambem passa para a proxima.
 async function askGemini(messages) {
   const plano = [
-    [GEMINI_MODEL, 0], [GEMINI_MODEL, 1000], [GEMINI_MODEL, 2500],
-    [GEMINI_FALLBACK_MODEL, 0],
+    [GEMINI_MODEL, 0, 25000],
+    [GEMINI_FALLBACK_MODEL, 0, 25000],
+    [GEMINI_MODEL, 1500, 20000],
   ];
   let ultimoErro;
-  for (const [modelo, espera] of plano) {
+  for (const [modelo, espera, limite] of plano) {
     if (espera) await sleep(espera);
     try {
-      return await callGemini(modelo, messages);
+      return await callGemini(modelo, messages, limite);
     } catch (err) {
       ultimoErro = err;
       if (!err.temporario) throw err; // erro de chave, pedido etc.: não adianta repetir
-      console.error(new Date().toISOString(), `${modelo} indisponível (${err.status}), tentando de novo`);
+      console.error(new Date().toISOString(), `${modelo} indisponível (${err.status ?? err.message}), tentando a próxima opção`);
     }
   }
   throw ultimoErro;
 }
 
-async function callGemini(model, messages) {
+async function callGemini(model, messages, limiteMs = 25000) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-  const r = await fetch(url, {
+  let r;
+  try {
+    r = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
     body: JSON.stringify({
@@ -136,8 +142,14 @@ async function callGemini(model, messages) {
       })),
       generationConfig: { temperature: 0.3, maxOutputTokens: 1024 },
     }),
-    signal: AbortSignal.timeout(30000),
+    signal: AbortSignal.timeout(limiteMs),
   });
+  } catch (e) {
+    // tempo esgotado ou falha de rede: temporario, tenta a proxima opcao do plano
+    const err = new Error(`gemini_rede (${model}): ${e.message}`);
+    err.temporario = true;
+    throw err;
+  }
   if (!r.ok) {
     const detail = await r.text();
     const err = new Error(`gemini_${r.status} (${model}): ${detail.slice(0, 300)}`);
