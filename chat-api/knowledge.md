@@ -116,46 +116,19 @@ Grade horária otimizada, arquivo da grade compatível com o RCO, agenda do prof
 no celular, reserva de espaços e um assistente de IA, em um só sistema,
 pensado para a rotina da gestão escolar.
 Pedir demonstração
-Ver resultados reais
-Resultado real
-−93%
-de janelas na agenda dos professores
-Na escola piloto, mesma semana, mesmos professores e turmas: de 184
-para 12 janelas nos três turnos, sem mudar a carga horária de
-ninguém e com a hora-atividade distribuída conforme a tabela da SEED-PR.
-Matutino
-Antes
-100
-Com NexGrade
-2
-Vespertino
-Antes
-60
-Com NexGrade
-9
-Noturno
-Antes
-24
-Com NexGrade
-1
-Segunda escola: noturno já com as regras de 2026
-−78%
-de janelas, de 23 para 5
-206
-aulas, sendo 181 presenciais e 25 assíncronas
-3 trios
-de docência sempre no mesmo horário
-~3 s
-para o motor encontrar a melhor grade
-Outubro de 2026
-Zero janelas no turno da manhã em duas escolas
-0
-janelas na manhã, contando aula e hora-atividade, em duas escolas
-1
-janela no turno da tarde de uma delas
-Grade em uso
-em uso pelas escolas, não só uma simulação
-Fonte: gerações reais feitas no NexGrade em setembro de 2026, em duas escolas estaduais do Paraná, e grades em uso em outubro de 2026, com todas as regras de cada escola respeitadas.
+Como reduz as janelas
+Menos janelas
+Menos janelas na agenda dos professores
+O motor monta a grade buscando o menor número de janelas possível, sem
+mudar a carga horária de ninguém e com a hora-atividade distribuída
+conforme a tabela da SEED-PR. Com a grade pronta, o Melhorar reorganiza
+só o necessário para tirar as janelas que sobraram.
+Mesma carga
+nenhum professor ganha ou perde aula para fechar janela
+HA nos vagos
+a hora-atividade ocupa os horários vagos entre as aulas
+Antes de valer
+a coordenação compara na simulação e decide
 Como funciona
 Da escola cadastrada ao arquivo para o RCO em quatro passos
 1
