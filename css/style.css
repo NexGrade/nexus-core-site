@@ -630,6 +630,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: white;
 }
 
+/* [VIDEO-TUTORIAL] vídeo passo a passo na página do NexGrade */
+.video-tutorial {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 28px;
+  border-radius: 20px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* [BIO-BANNER] banner da fundadora (computador) e retrato + texto (celular) */
+.bio-banner { margin: 0; }
+.bio-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.bio-foto { object-fit: cover; display: block; max-width: 220px; height: auto; }
+.bio-celular { display: none; }
+@media (max-width: 860px) {
+  .bio-banner { display: none; }
+  .bio-celular { display: grid; }
+}
+
 /* ============================================================
    CTA final
    ============================================================ */
