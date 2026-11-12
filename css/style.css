@@ -746,11 +746,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom: 16px;
 }
 
+/* [RODAPE-CELULAR] página de contato: formulário e canais lado a lado; no celular, um embaixo do outro */
+.contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contato-grid > * { min-width: 0; }
+@media (max-width: 860px) { .contato-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+.footer-col { min-width: 0; } /* [RODAPE-CELULAR] o e-mail comprido empurrava a coluna e a página rolava de lado */
+
 .footer-col a, .footer-col p {
   display: block;
   font-size: 0.88rem;
   color: var(--texto-tenue);
   margin-bottom: 10px;
+  overflow-wrap: anywhere;
 }
 
 .footer-col a:hover { color: var(--azul-claro); }
