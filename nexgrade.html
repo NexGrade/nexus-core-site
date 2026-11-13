@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://nexuscoretecnologia.com.br/img/nexgrade/nexgrade-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=7">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -335,6 +335,59 @@
         <source src="video/nexgrade-tutorial.mp4?v=6" type="video/mp4">
         Seu navegador não abre o vídeo aqui. <a href="video/nexgrade-tutorial.mp4?v=6">Baixe o vídeo</a>.
       </video>
+
+      <!-- [VIDEOS-POR-PARTE] (12/11/2026) o passo a passo cortado em vídeos curtos, um por parte do sistema, com menu -->
+      <div class="video-partes" id="video-partes">
+        <div class="vp-cabeca">
+          <h3>Primeiro contato? Veja por partes</h3>
+          <p>Vídeos curtos, de até 35 segundos, na ordem em que a escola usa o sistema. Escolha a parte e siga junto.</p>
+        </div>
+        <div class="vp-corpo">
+          <ol class="vp-menu" aria-label="Partes do NexGrade">
+            <li><button type="button" data-src="video/partes/nexgrade-parte-01-visao-geral.mp4" data-poster="video/partes/nexgrade-parte-01-visao-geral-capa.webp" aria-current="true">
+              <span class="vp-num">1</span><span class="vp-txt"><strong>Visão Geral</strong><small>Os números da escola e os avisos que pedem atenção.</small></span><span class="vp-dur">0:08</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-02-cadastrar-professor.mp4" data-poster="video/partes/nexgrade-parte-02-cadastrar-professor-capa.webp">
+              <span class="vp-num">2</span><span class="vp-txt"><strong>Cadastrar professor</strong><small>Nome, e-mail e as disciplinas que ele leciona.</small></span><span class="vp-dur">0:22</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-03-cadastrar-turma.mp4" data-poster="video/partes/nexgrade-parte-03-cadastrar-turma-capa.webp">
+              <span class="vp-num">3</span><span class="vp-txt"><strong>Cadastrar turma e atribuir professores</strong><small>Curso e série trazem a matriz; depois, um professor para cada disciplina.</small></span><span class="vp-dur">0:35</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-04-trocar-professor.mp4" data-poster="video/partes/nexgrade-parte-04-trocar-professor-capa.webp">
+              <span class="vp-num">4</span><span class="vp-txt"><strong>Trocar o professor da turma</strong><small>As aulas da grade vão junto para o novo professor.</small></span><span class="vp-dur">0:20</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-05-disponibilidade.mp4" data-poster="video/partes/nexgrade-parte-05-disponibilidade-capa.webp">
+              <span class="vp-num">5</span><span class="vp-txt"><strong>Disponibilidade, bloqueios e HA</strong><small>Horários livres, bloqueados e de hora-atividade de cada professor.</small></span><span class="vp-dur">0:34</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-06-conflitos.mp4" data-poster="video/partes/nexgrade-parte-06-conflitos-capa.webp">
+              <span class="vp-num">6</span><span class="vp-txt"><strong>Conferir os conflitos</strong><small>O que cada aviso quer dizer e como resolver antes de gerar.</small></span><span class="vp-dur">0:34</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-07-modo-rascunho.mp4" data-poster="video/partes/nexgrade-parte-07-modo-rascunho-capa.webp">
+              <span class="vp-num">7</span><span class="vp-txt"><strong>Modo Rascunho</strong><small>Testar mudanças sem mexer na grade da escola.</small></span><span class="vp-dur">0:21</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-08-gerar-melhorar.mp4" data-poster="video/partes/nexgrade-parte-08-gerar-melhorar-capa.webp">
+              <span class="vp-num">8</span><span class="vp-txt"><strong>Gerar e melhorar a grade</strong><small>Gerar do zero no começo do ano; Melhorar para ajustes.</small></span><span class="vp-dur">0:24</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-09-simular-promover.mp4" data-poster="video/partes/nexgrade-parte-09-simular-promover-capa.webp">
+              <span class="vp-num">9</span><span class="vp-txt"><strong>Simular e promover</strong><small>Comparar com a grade de hoje e aplicar, com cópia de segurança.</small></span><span class="vp-dur">0:24</span>
+            </button></li>
+            <li><button type="button" data-src="video/partes/nexgrade-parte-10-imprimir-assistente.mp4" data-poster="video/partes/nexgrade-parte-10-imprimir-assistente-capa.webp">
+              <span class="vp-num">10</span><span class="vp-txt"><strong>Imprimir e Assistente de IA</strong><small>PDFs por turma e por professor, e onde tirar dúvidas.</small></span><span class="vp-dur">0:09</span>
+            </button></li>
+          </ol>
+          <div class="vp-player">
+            <video class="video-tutorial" id="vp-video" controls preload="none" playsinline width="1280" height="720"
+                   poster="video/partes/nexgrade-parte-01-visao-geral-capa.webp" aria-label="Vídeo curto da parte escolhida do NexGrade, com narração e legenda em português">
+              <source src="video/partes/nexgrade-parte-01-visao-geral.mp4" type="video/mp4">
+              <a href="video/partes/nexgrade-parte-01-visao-geral.mp4">Baixe o vídeo</a>.
+            </video>
+            <div class="vp-acoes">
+              <span id="vp-legenda" aria-live="polite">Parte 1 de 10: Visão Geral</span>
+              <button type="button" class="btn btn-ghost" id="vp-proxima">Próxima parte →</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- [VIDEOS-CURTOS] (11/11/2026) app do professor e app da pedagogia, cerca de 1 minuto cada -->
       <div class="videos-curtos">
@@ -746,6 +799,7 @@
 <script src="js/whatsapp.js" defer></script>
 <script src="js/nav.js"></script>
 <script src="js/chat.js" defer></script>
+<script src="js/video-partes.js" defer></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

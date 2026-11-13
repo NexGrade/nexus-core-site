@@ -651,6 +651,52 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .videos-curtos .video-tutorial { margin-top: 16px; border-radius: 16px; }
 @media (max-width: 860px) { .videos-curtos { grid-template-columns: 1fr; } }
 
+/* [VIDEOS-POR-PARTE] menu de vídeos curtos (lista à esquerda, vídeo à direita; no celular, vídeo em cima) */
+.video-partes { margin-top: 56px; }
+.vp-cabeca h3 { margin: 0 0 6px; }
+.vp-cabeca p { margin: 0; color: var(--texto-muted); }
+.vp-corpo { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 24px; margin-top: 20px; align-items: start; }
+.vp-menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.vp-menu button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.vp-menu button:hover { border-color: var(--azul-claro); }
+.vp-menu button:focus-visible { outline: 2px solid var(--azul-claro); outline-offset: 2px; }
+.vp-menu button[aria-current="true"] { background: var(--surface); border-color: var(--azul-claro); }
+.vp-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--surface); color: var(--azul-claro);
+  font-weight: 700; font-size: 0.9rem;
+}
+.vp-menu button[aria-current="true"] .vp-num { background: var(--azul); color: white; }
+.vp-txt { min-width: 0; display: flex; flex-direction: column; }
+.vp-txt strong { font-size: 0.95rem; font-weight: 600; }
+.vp-txt small { color: var(--texto-muted); font-size: 0.82rem; line-height: 1.35; }
+.vp-dur { color: var(--texto-tenue); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+.vp-player { min-width: 0; position: sticky; top: 90px; }
+.vp-player .video-tutorial { margin-top: 0; border-radius: 16px; }
+.vp-acoes { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.vp-acoes span { color: var(--texto-muted); font-size: 0.95rem; }
+.vp-acoes .btn[hidden] { display: none; }
+@media (max-width: 860px) {
+  .vp-corpo { grid-template-columns: 1fr; }
+  .vp-player { order: -1; position: static; }
+}
+
 /* [BIO-BANNER] banner da fundadora (computador) e retrato + texto (celular) */
 .bio-banner { margin: 0; }
 .bio-banner img {
