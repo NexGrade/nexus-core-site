@@ -13,13 +13,13 @@ protótipos de vitrine — entregamos tecnologia em produção, pronta
 para gerar resultados.
 Falar com a gente
 Ver o que já rodamos
-Em implantação
+Ativo
 NexGrade
 Gestão de horário escolar
-Em produção
+Ativo
 Nex Reserva + Nex Cantina
 Programa educacional
-Piloto ativo
+Ativo
 Yardflow
 Monitoramento de pátio industrial
 O que fazemos
@@ -29,19 +29,19 @@ performance em produção — sustentando redes de ensino com mais de
 1.500 alunos, otimizando processos em grandes montadoras do setor
 automotivo e garantindo integrações que funcionam de verdade na
 ponta.
-Produto · Em implantação
+Produto · Ativo
 NexGrade
 Geração de horário escolar com hora-atividade alinhada à tabela
 da SEED-PR e grade exportada em arquivo compatível com o RCO,
 inclusive turmas com trio e período integral.
 Conhecer o NexGrade →
-Soluções · Em produção
+Soluções · Ativo
 Soluções Educacionais
 Nex Reserva e Nex Cantina: sistemas reais em produção, eliminando
 processos manuais em uma escola estadual do Paraná com mais de
 1.500 alunos.
 Conhecer as soluções →
-Projeto · Piloto ativo
+Projeto · Ativo
 Yardflow
 Monitoramento de caminhões em pátio industrial, da chegada à
 portaria até a doca — piloto em operação em uma grande montadora.
@@ -110,7 +110,7 @@ Falar com a gente
 ## NexGrade (/nexgrade.html)
 
 / NexGrade
-Em implantação em três colégios estaduais
+Ativo em colégios estaduais do Paraná
 A plataforma que organiza a operação pedagógica do início ao fim.
 Grade horária otimizada, arquivo da grade compatível com o RCO, agenda do professor
 no celular, reserva de espaços e um assistente de IA, em um só sistema,
@@ -285,7 +285,7 @@ manuais por processos inteligentes, otimizar o tempo das equipes e
 conectar toda a comunidade escolar com segurança e usabilidade.
 Nossos Softwares em Produção
 Sistemas de verdade, rodando em escolas de verdade
-Nex Reserva · Em produção
+Nex Reserva · Ativo
 Nex Reserva
 Gestão Inteligente de Espaços e Laboratórios Educacionais
 O Nex Reserva foi criado para encerrar a era dos cadernos de
@@ -304,7 +304,7 @@ Desenvolvido em Node.js, TypeScript e PostgreSQL para garantir alta velocidade e
 Node.js + TypeScript
 Drizzle ORM
 PostgreSQL
-Nex Cantina · Em produção
+Nex Cantina · Ativo
 Nex Cantina
 Eficiência, Agilidade e Gestão Financeira para a Cantina Escolar
 Desenhado para suportar o fluxo intenso de grandes unidades
@@ -340,7 +340,7 @@ Falar com a gente
 ## Yardflow (/yardflow.html)
 
 / Yardflow
-Piloto ativo · Indústria automotiva
+Ativo · Indústria automotiva
 Saber onde está cada caminhão do pátio, sem rádio e sem ligação.
 Yardflow acompanha a localização de caminhões dentro do pátio em tempo
 real e avisa o motorista quando ele é chamado para a doca — piloto em
