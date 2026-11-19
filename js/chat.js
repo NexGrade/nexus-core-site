@@ -96,7 +96,7 @@
         <textarea rows="1" maxlength="800" placeholder="Escreva sua pergunta" aria-label="Sua pergunta"></textarea>
         <button type="submit">Enviar</button>
       </form>
-      <div class="nc-chat-foot">Respostas geradas por IA podem conter erros. Para propostas, use a página de contato.</div>`;
+      <div class="nc-chat-foot">Respostas geradas por IA podem conter erros. Não digite dados pessoais. <a href="privacidade.html">Privacidade</a></div>`;
 
     document.body.append(btn, box);
 

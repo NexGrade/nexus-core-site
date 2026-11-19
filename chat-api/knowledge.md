@@ -13,23 +13,22 @@ protótipos de vitrine — entregamos tecnologia em produção, pronta
 para gerar resultados.
 Falar com a gente
 Ver o que já rodamos
-Ativo
+Em testes
 NexGrade
 Gestão de horário escolar
 Ativo
 Nex Reserva
 Programa educacional
-Ativo
+Piloto
 Yardflow
 Monitoramento de pátio industrial
 O que fazemos
 Três frentes, uma forma de trabalhar.
-Não vendemos slideware. Nossos sistemas já operam em alta
-performance em produção — sustentando redes de ensino com mais de
-1.500 alunos, otimizando processos em grandes montadoras do setor
-automotivo e garantindo integrações que funcionam de verdade na
-ponta.
-Produto · Ativo
+Não vendemos slideware. Nossos sistemas rodam no dia a dia de
+verdade: numa escola estadual com mais de 1.500 alunos, em testes
+em escolas estaduais do Paraná e em piloto numa grande montadora
+do setor automotivo.
+Produto · Em testes
 NexGrade
 Geração de horário escolar com hora-atividade alinhada à tabela
 da SEED-PR e grade exportada em arquivo compatível com o RCO,
@@ -41,7 +40,7 @@ Nex Reserva: sistema real em produção, eliminando processos
 manuais no agendamento de espaços de uma escola estadual do
 Paraná com mais de 1.500 alunos.
 Conhecer as soluções →
-Projeto · Ativo
+Projeto · Piloto
 Yardflow
 Monitoramento de caminhões em pátio industrial, da chegada à
 portaria até a doca — piloto em operação em uma grande montadora.
@@ -51,7 +50,7 @@ Tecnologia testada onde ela precisa funcionar.
 Contexto real antes de código
 Cada sistema começa por entender o problema de quem vai usar todo dia — secretária de escola, professor, motorista de caminhão — não por uma lista de features genérica.
 Produção, não protótipo
-Preferimos um sistema pequeno rodando de verdade a um roadmap grande parado no papel. Todos os nossos projetos atuais estão em uso real.
+Preferimos um sistema pequeno rodando de verdade a um roadmap grande parado no papel. Todos os nossos projetos atuais rodam com usuários reais, em produção, em testes ou em piloto.
 Stack profissional, sem exagero
 TypeScript, Node.js, PostgreSQL, React — tecnologia de mercado, madura e sustentável, escolhida pelo que o projeto precisa, não pela moda.
 Testado no chão da escola
@@ -86,7 +85,7 @@ Sua vivência diária no chão da escola pública confere à Nexus Core um DNA �
 Formação Orientada a Impacto Real
 Defensora do aprendizado baseado em projetos em produção, lidera a construção de soluções que transformaram alunos e desenvolvedores em construtores de tecnologia robusta, segura e madura para o mercado industrial e educacional.
 Compromisso com a Segurança e Governança
-Conduz o desenvolvimento da empresa sob rígidos padrões de qualidade, proteção de dados (LGPD) e estabilidade, garantindo que as soluções da Nexus Core entreguem confiabilidade máxima a seus parceiros e clientes.
+Conduz o desenvolvimento da empresa com foco em qualidade, estabilidade e cuidado com os dados pessoais, para que as soluções da Nexus Core sejam confiáveis para parceiros e clientes.
 Nexus Core Tecnologia
 Tecnologia de impacto real para quem transforma o dia a dia.
 Missão
@@ -110,7 +109,7 @@ Falar com a gente
 ## NexGrade (/nexgrade.html)
 
 / NexGrade
-Ativo em colégios estaduais do Paraná
+Em testes em 6 escolas estaduais do Paraná
 A plataforma que organiza a operação pedagógica do início ao fim.
 Grade horária otimizada, arquivo da grade compatível com o RCO, agenda do professor
 no celular, reserva de espaços e um assistente de IA, em um só sistema,
@@ -266,6 +265,8 @@ Funciona com turma de período integral?
 Sim. A turma integral tem uma grade única de manhã e tarde, com os horários iguais aos do RCO, e o professor não fica em duas turmas no mesmo horário.
 Os professores precisam instalar algum aplicativo?
 Não. A Minha Agenda funciona como aplicativo direto pelo navegador do celular ou do computador, sem passar pela loja de apps.
+O NexGrade guarda dados de alunos?
+Não. O NexGrade trabalha só com dados de professores e da equipe da escola, como nome, contato, disponibilidade e horários. As turmas aparecem apenas como turma, sem lista de alunos.
 Os dados de uma escola ficam visíveis para outra?
 Não. Cada escola tem sua própria base. Professores, turmas e disponibilidade nunca se misturam com os de outra instituição.
 Quanto tempo leva para começar?
@@ -284,7 +285,7 @@ Sistemas de alta disponibilidade projetados para substituir rotinas
 manuais por processos inteligentes, otimizar o tempo das equipes e
 conectar toda a comunidade escolar com segurança e usabilidade.
 Software em Produção
-Sistemas de verdade, rodando em escolas de verdade
+Sistema de verdade, rodando numa escola de verdade
 Nex Reserva · Ativo
 Nex Reserva
 Gestão Inteligente de Espaços e Laboratórios Educacionais
@@ -311,7 +312,7 @@ Softwares que já nascem em produção, suportando acessos simultâneos diários
 Foco na Experiência do Usuário (UX)
 Interfaces desenvolvidas para secretárias, professores e equipe pedagógica usarem sem a necessidade de treinamentos complexos.
 Arquitetura de Nuvem e Segurança
-Infraestrutura configurada com padrões rigorosos de CORS, autenticação segura e migrações automatizadas de banco de dados, garantindo estabilidade e proteção de dados (LGPD).
+Infraestrutura configurada com CORS restrito, autenticação segura e migrações automatizadas de banco de dados, com foco em estabilidade e na proteção dos dados.
 Sua escola tem um processo manual que trava todo dia?
 Conta pra gente o problema — talvez seja o próximo sistema a entrar em produção.
 Falar com a gente
@@ -319,7 +320,7 @@ Falar com a gente
 ## Yardflow (/yardflow.html)
 
 / Yardflow
-Ativo · Indústria automotiva
+Piloto · Indústria automotiva
 Saber onde está cada caminhão do pátio, sem rádio e sem ligação.
 Yardflow acompanha a localização de caminhões dentro do pátio em tempo
 real e avisa o motorista quando ele é chamado para a doca — piloto em
@@ -371,10 +372,14 @@ contato@nexuscoretecnologia.com.br
 Onde estamos
 Piraquara, Paraná — Brasil
 Sobre qual iniciativa você quer falar?
-NexGrade (horário escolar para a rede SEED-PR), Soluções Educacionais (Nex Reserva) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
+NexGrade (horário escolar), Soluções Educacionais (Nex Reserva) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
 
 ## Dados de contato
 
 E-mail: contato@nexuscoretecnologia.com.br
 Formulário: /contato.html
 Localização: Piraquara, Paraná — Brasil
+
+## Privacidade (/privacidade.html)
+
+A Nexus Core Tecnologia (CNPJ 48.542.365/0001-74, Piraquara/PR) usa os dados do formulário de contato só para responder ao contato; o envio passa pelo serviço Web3Forms. O que se digita no chat do site vai ao servidor da Nexus Core e à IA do Google (Gemini) só para gerar a resposta, e o histórico não é guardado; não se deve digitar dados pessoais no chat. O site não usa cookies de rastreamento nem análise de visitas. Pedidos sobre dados pessoais (acesso, correção, exclusão): contato@nexuscoretecnologia.com.br, resposta em até 15 dias.
