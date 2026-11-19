@@ -17,7 +17,7 @@ Ativo
 NexGrade
 Gestão de horário escolar
 Ativo
-Nex Reserva + Nex Cantina
+Nex Reserva
 Programa educacional
 Ativo
 Yardflow
@@ -37,9 +37,9 @@ inclusive turmas com trio e período integral.
 Conhecer o NexGrade →
 Soluções · Ativo
 Soluções Educacionais
-Nex Reserva e Nex Cantina: sistemas reais em produção, eliminando
-processos manuais em uma escola estadual do Paraná com mais de
-1.500 alunos.
+Nex Reserva: sistema real em produção, eliminando processos
+manuais no agendamento de espaços de uma escola estadual do
+Paraná com mais de 1.500 alunos.
 Conhecer as soluções →
 Projeto · Ativo
 Yardflow
@@ -49,7 +49,7 @@ Conhecer o Yardflow →
 Como trabalhamos
 Tecnologia testada onde ela precisa funcionar.
 Contexto real antes de código
-Cada sistema começa por entender o problema de quem vai usar todo dia — secretária de escola, operador de cantina, motorista de caminhão — não por uma lista de features genérica.
+Cada sistema começa por entender o problema de quem vai usar todo dia — secretária de escola, professor, motorista de caminhão — não por uma lista de features genérica.
 Produção, não protótipo
 Preferimos um sistema pequeno rodando de verdade a um roadmap grande parado no papel. Todos os nossos projetos atuais estão em uso real.
 Stack profissional, sem exagero
@@ -275,7 +275,7 @@ Traga os dados que já existem hoje. A gente prepara tudo com você revisando ca
 Pedir demonstração
 ×
 
-## Soluções Educacionais (Nex Reserva e Nex Cantina) (/programa-educacional.html)
+## Soluções Educacionais (Nex Reserva) (/programa-educacional.html)
 
 / Soluções Educacionais
 Em produção
@@ -283,7 +283,7 @@ Tecnologia que estrutura, gestão que transforma.
 Sistemas de alta disponibilidade projetados para substituir rotinas
 manuais por processos inteligentes, otimizar o tempo das equipes e
 conectar toda a comunidade escolar com segurança e usabilidade.
-Nossos Softwares em Produção
+Software em Produção
 Sistemas de verdade, rodando em escolas de verdade
 Nex Reserva · Ativo
 Nex Reserva
@@ -304,33 +304,12 @@ Desenvolvido em Node.js, TypeScript e PostgreSQL para garantir alta velocidade e
 Node.js + TypeScript
 Drizzle ORM
 PostgreSQL
-Nex Cantina · Ativo
-Nex Cantina
-Eficiência, Agilidade e Gestão Financeira para a Cantina Escolar
-Desenhado para suportar o fluxo intenso de grandes unidades
-escolares (com capacidade para atender mais de 1.500 alunos), o
-Nex Cantina moderniza as vendas, reduz drasticamente as filas do
-intervalo e traz controle para os responsáveis e para a gestão
-escolar.
-Pagamentos e Recargas Via PIX:
-Inclusão de saldo pelos pais ou alunos de forma digital e antecipada.
-Pedidos Antecipados:
-O aluno garante o pedido antes do intervalo, reduzindo o tempo de espera e a aglomeração no balcão.
-PDV Dedicado (Frente de Caixa):
-Interface intuitiva e ultrarrápida para a equipe da cantina processar entregas sem travamentos.
-Sustentabilidade Financeira:
-Projetado sob uma arquitetura de alta eficiência operacional com custo de manutenção otimizado, ideal para viabilidade na gestão pública e privada.
-React + Vite
-Node.js + Express
-Drizzle ORM
-PostgreSQL
-TanStack Query
 Diferenciais da Engenharia Nexus Core na Educação
 Engenharia pensada pro dia a dia da escola, não só pra demonstração
 Testado no Chão da Escola
 Softwares que já nascem em produção, suportando acessos simultâneos diários e rotinas intensas de uso real.
 Foco na Experiência do Usuário (UX)
-Interfaces desenvolvidas para secretárias, professores, cantineiros e alunos usarem sem a necessidade de treinamentos complexos.
+Interfaces desenvolvidas para secretárias, professores e equipe pedagógica usarem sem a necessidade de treinamentos complexos.
 Arquitetura de Nuvem e Segurança
 Infraestrutura configurada com padrões rigorosos de CORS, autenticação segura e migrações automatizadas de banco de dados, garantindo estabilidade e proteção de dados (LGPD).
 Sua escola tem um processo manual que trava todo dia?
@@ -392,7 +371,7 @@ contato@nexuscoretecnologia.com.br
 Onde estamos
 Piraquara, Paraná — Brasil
 Sobre qual iniciativa você quer falar?
-NexGrade (horário escolar para a rede SEED-PR), Soluções Educacionais (Nex Reserva e Nex Cantina) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
+NexGrade (horário escolar para a rede SEED-PR), Soluções Educacionais (Nex Reserva) ou Yardflow (monitoramento de pátio industrial) — conta um pouco do contexto que a gente responde rápido.
 
 ## Dados de contato
 
